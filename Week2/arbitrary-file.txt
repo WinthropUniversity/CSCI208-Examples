@@ -4,5 +4,5 @@ file with -1 cool items in it
 Some
 lines are 100
 short, some are long 1024 32
-and it has 6 positive integers in it
+and it has 7  integers in it
 

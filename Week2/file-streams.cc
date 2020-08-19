@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include <string>
 
 
@@ -16,17 +17,37 @@ int main() {
   std::cout << "What is the name of the input file?  ";
   std::cin >> inputFilename;
 
-
-  // Get the output file name from the user
-  std::cout << "What is the name of the output file?  ";
-  std::cin >> outputFilename;
-
   // Open the input file
   inputFile.open(inputFilename);
   if (!inputFile.is_open()) {
     std::cout << "Could not open file " << inputFilename << std::endl;
     return 1; // Exit with error status 1, indicates error
    }
+
+  // Tell the user what is happening
+  std::cout << "  -> Stripping all integers from the file " << inputFilename
+	    << " and putting them each on their own line in " << outputFilename << std::endl;
+
+  // Read from the input file until you hit the
+  // end of file marker, put it into a string stream buffer
+  std::ostringstream readBuffer;
+  while (!inputFile.eof()) {
+    std::string token;
+    inputFile >> token;
+    readBuffer << token << std::endl;
+  }
+
+  // Close our input file
+  inputFile.close();
+
+  // Tell the user what is happening
+  std::cout << "  -> " << inputFilename << " has been read" << std::endl;
+
+  // --------------------------------------------------------------------------------
+  
+   // Get the output file name from the user
+  std::cout << "What is the name of the output file?  ";
+  std::cin >> outputFilename;
 
   // Open the output file
   outputFile.open(outputFilename);
@@ -35,32 +56,34 @@ int main() {
     return 1; // Exit with error status 1, indicates error
    }
 
-  // Tell the user what is happening
-  std::cout << "Stripping all positive integers from the file " << inputFilename
-	    << " and putting them each on their own line in " << outputFilename << std::endl;
-
-  // Read from the input file until you hit the
-  // end of file marker
-  while (!inputFile.eof()) {
+  // Put the read buffer into a write buffer, then write out
+  // all numbers in that buffer
+  std::istringstream writeBuffer(readBuffer.str());
+  while (!writeBuffer.eof()) {
     int numericValue;
-    std::string junk;
 
     // Grab a number from the input file
-    inputFile >> numericValue;
+    writeBuffer >> numericValue;
 
-    // If that number is bigger than zero, write it on its own
-    // line in the output file
-    if (!inputFile.fail())
-      outputFile << numericValue << std::endl;
-    else {
-      inputFile >> junk;
-      std::cout << "... ignoring: " << junk << std::endl;
+    // If it is not a number, clear the buffer error
+    // read it as a string, then proceed
+    if (writeBuffer.fail()) {
+      writeBuffer.clear();  // clear the error
+      std::string junk;
+      writeBuffer >> junk;  // read the non-number
     }
+
+    // If it is a number, then write it to the outputfile
+    else outputFile << numericValue << std::endl;   
   }
 
+  // Close our files
   inputFile.close();
   outputFile.close();
-  
+
+  // Tell the user what is happening
+  std::cout << "  -> " << outputFilename << " has been written" << std::endl;
+
   // Everything ran okey-dokey, so tell the OS we're good
   return 0;
 }
