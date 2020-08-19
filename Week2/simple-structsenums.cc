@@ -1,4 +1,4 @@
-// Simple I/O stream examples for Week 2 of CSCI 208
+// Simple structure and enum example for Week 2 of CSCI 208
 // R. Paul Wiegand
 
 #include<iostream>
