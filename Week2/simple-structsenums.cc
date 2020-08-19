@@ -3,8 +3,10 @@
 
 #include<iostream>
 
+// Enum type definition for DayQuality
 enum DayQuality {DQ_GOOD, DQ_MEH, DQ_BAD};
 
+// Structure type definition for Date
 struct Date {
   int day;
   int month;
@@ -13,6 +15,7 @@ struct Date {
 };  // <--- Don't forget the semicolon!
 
 
+// A simple function that asks about a day of the user
 Date askUserAboutDay() {
   Date currentDate;
 
@@ -39,8 +42,9 @@ Date askUserAboutDay() {
 
   return(currentDate);
 }
-  
 
+
+// A simple function to print the date information
 void printDay(Date myDate) {
   std::cout << myDate.month << "/"
 	    << myDate.day << "/"
@@ -48,6 +52,8 @@ void printDay(Date myDate) {
             << (int)myDate.quality << std::endl << std::endl;
 }
 
+
+// The main of the program
 int main() {
   char keepGoing;
 
