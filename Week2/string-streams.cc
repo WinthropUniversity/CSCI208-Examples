@@ -1,9 +1,9 @@
 // Simple string stream examples for Week 2 of CSCI 208
 // R. Paul Wiegand
 
-#include <iostream>
-#include <sstream>
-#include <string>
+#include<iostream>
+#include<sstream>
+#include<string>
 
 
 int main() {

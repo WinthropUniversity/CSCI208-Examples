@@ -15,7 +15,12 @@ struct Date {
 };  // <--- Don't forget the semicolon!
 
 
-// A simple function that asks about a day of the user
+/**
+ * A simple function that asks about a day of the user and returns
+ * that information
+ * 
+ * @return  Date record of how a particular day the user described
+ */
 Date askUserAboutDay() {
   Date currentDate;
 

@@ -1,10 +1,10 @@
 // Simple string stream examples for Week 2 of CSCI 208
 // R. Paul Wiegand
 
-#include <iostream>
-#include <fstream>
-#include <sstream>
-#include <string>
+#include<iostream>
+#include<fstream>
+#include<sstream>
+#include<string>
 
 
 int main() {
@@ -22,7 +22,7 @@ int main() {
   if (!inputFile.is_open()) {
     std::cout << "Could not open file " << inputFilename << std::endl;
     return 1; // Exit with error status 1, indicates error
-   }
+  }
 
   // Tell the user what is happening
   std::cout << "  -> Stripping all integers from the file " << inputFilename
@@ -54,7 +54,7 @@ int main() {
   if (!outputFile.is_open()) {
     std::cout << "Could not open file " << inputFilename << std::endl;
     return 1; // Exit with error status 1, indicates error
-   }
+  }
 
   // Put the read buffer into a write buffer, then write out
   // all numbers in that buffer
