@@ -23,13 +23,14 @@
  * @return  The total number of grades found in the file.
  */
 int readGradefile(double gradesArray[]) {
+  std::string gradeFilename = "grades.txt";
   std::ifstream gradeFile;
   int gradeCounter = 0;
 
   // Open the input file
-  gradeFile.open("grades.txt");
+  gradeFile.open(gradeFilename);
   if (!gradeFile.is_open()) {
-    std::cout << "Could not open file " << gradeFile << std::endl;
+    std::cout << "Could not open file " << gradeFilename << std::endl;
     return 1; // Exit with error status 1, indicates error
   }
 
@@ -97,7 +98,7 @@ int main() {
 
   // Report the result
   std::cout << "Number of values found: " << numGrades << std::endl;
-  std::cout << "Average of the values:  " << std::setprecision(2) << average << std::endl;
+  std::cout << "Average of the values:  " << std::setprecision(4) << average << std::endl;
 
   // Everything ran okey-dokey, so tell the OS we're good
   return 0;
