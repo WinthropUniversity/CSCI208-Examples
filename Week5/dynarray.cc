@@ -27,11 +27,15 @@ int main() {
     cin >> numberlist[idx];
   }
 
-  
+  // Output the list in reverse order
   cout << endl << "Here was your list in reverse order:" << endl;
   for (int idx=(listsize-1); idx>=0; idx--)
     cout << "  " << numberlist[idx] << endl;
 
+  // Show the hard way to reference items in the array ...
+  if (listsize > 2)
+    cout << "Second item was: " << *(numberlist + 1) << endl;
+  
   // Now you had better deallocate the list ...
   delete [] numberlist;
 

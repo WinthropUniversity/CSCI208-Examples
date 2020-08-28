@@ -9,7 +9,7 @@ CFLAGS=-I.
 
 
 # Build all examples
-all:	simple-indirection ref-deref dynarray
+all:	simple-indirection ref-deref dynarray dynobj
 
 
 ## First example.  The "$@" here is a shortcut in gmake and means "the target".  The
@@ -28,7 +28,11 @@ ref-deref:	ref-deref.cc
 dynarray:	dynarray.cc
 	$(CC) $(CFLAGS) -o $@  $<
 
+# Fourth example:
+dynobj:	dynobj.cc
+	$(CC) $(CFLAGS) -o $@ $<
+
 # Clean up things
 clean:
 	rm *.o
-	rm simple-indirection ref-deref dynarray
+	rm simple-indirection ref-deref dynarray dynobj
