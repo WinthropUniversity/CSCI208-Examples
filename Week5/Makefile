@@ -9,7 +9,7 @@ CFLAGS=-I.
 
 
 # Build all examples
-all:	simple-indirection
+all:	simple-indirection ref-deref
 
 
 ## First example.  The "$@" here is a shortcut in gmake and means "the target".  The
@@ -18,6 +18,10 @@ all:	simple-indirection
 simple-indirection:	simple-indirection.cc
 	$(CC) $(CFLAGS) -o $@  $<
 
+
+# Second example:
+ref-deref:	ref-deref.cc
+	$(CC) $(CFLAGS) -o $@  $<
 
 
 # Clean up things
