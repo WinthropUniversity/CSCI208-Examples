@@ -5,11 +5,10 @@
 #   $CC for the compiler
 #   $CFLAGS to set where the include directory is (here, ".")
 CC=g++
-CFLAGS=-I.
-
+CFLAGS=-I. 
 
 # Build all examples
-all:	simple-indirection ref-deref dynarray dynobj
+all:	simple-indirection ref-deref dynarray dynobj vectorexample
 
 
 ## First example.  The "$@" here is a shortcut in gmake and means "the target".  The
@@ -32,7 +31,11 @@ dynarray:	dynarray.cc
 dynobj:	dynobj.cc
 	$(CC) $(CFLAGS) -o $@ $<
 
+# Fifth example:
+vectorexample:	vectorexample.cc
+	$(CC) $(CFLAGS) -o $@ $<
+
 # Clean up things
 clean:
-	rm *.o
-	rm simple-indirection ref-deref dynarray dynobj
+	rm -f *.o
+	rm simple-indirection ref-deref dynarray dynobj vectorexample
