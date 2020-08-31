@@ -10,6 +10,15 @@ int main() {
   std::string yourName;
   int yourAge;
 
+  // Let's show an example of getline:
+  std::string line;
+  std::cout << "Type a line of text:" << std::endl;
+  std::getline(std::cin, line);
+  std::cout << "The line was '" << line << "'" << std::endl;
+
+  // Blank line
+  std::cout << std::endl;
+  
   // Standard output example
   std::cout << instructorName << " is " << instructorAge << " years old" << std::endl;
 
