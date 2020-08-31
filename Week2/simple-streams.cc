@@ -7,7 +7,7 @@
 int main() {
   std::string instructorName = "Paul Wiegand";
   int instructorAge = 49;
-  std::string yourName;
+  std::string yourFirstName, yourLastName;
   int yourAge;
 
   // Let's show an example of getline:
@@ -23,14 +23,16 @@ int main() {
   std::cout << instructorName << " is " << instructorAge << " years old" << std::endl;
 
   // Standard input example
-  std::cout << "What is your name? ";
-  std::cin >> yourName;
+  std::cout << "What is your first and last name? ";
+  std::cin >> yourFirstName;
+  std::cin >> yourLastName;
 
   std::cout << "What is your age? ";
   std::cin >> yourAge;
 
   // Standard output example
-  std::cout << yourName << " is " << yourAge << " years old" << std::endl;
+  std::cout << yourFirstName << " " << yourLastName 
+	    << " is " << yourAge << " years old" << std::endl;
   
   // Everything ran okey-dokey, so tell the OS we're good
   return 0;
