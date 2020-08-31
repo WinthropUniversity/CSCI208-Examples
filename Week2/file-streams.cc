@@ -25,8 +25,8 @@ int main() {
   }
 
   // Tell the user what is happening
-  std::cout << "  -> Stripping all integers from the file " << inputFilename
-	    << " and putting them each on their own line in " << outputFilename << std::endl;
+  std::cout << "  -> Read contents from the file " << inputFilename
+	    << " and put strings each on their own line." << std::endl;
 
   // Read from the input file until you hit the
   // end of file marker, put it into a string stream buffer
@@ -78,7 +78,6 @@ int main() {
   }
 
   // Close our files
-  inputFile.close();
   outputFile.close();
 
   // Tell the user what is happening
