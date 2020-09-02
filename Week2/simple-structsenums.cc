@@ -49,7 +49,11 @@ Date askUserAboutDay() {
 }
 
 
-// A simple function to print the date information
+/**
+ * Print the day record to the screen.
+ *
+ * @param myDate This is the Date variable you want to print
+ */
 void printDay(Date myDate) {
   std::cout << myDate.month << "/"
 	    << myDate.day << "/"
@@ -70,7 +74,11 @@ int main() {
     std::cin >> keepGoing;
     std::cout << std::endl;
   } while (keepGoing == 'y');
-    
+
+  std::cout << "What is 'false'?  " << (int)false << std::endl;  
+  std::cout << "What is 'true'?   " << (int)true << std::endl;  
+
+  if (2 == x)  std::cout << "42 is true!" << std::endl;
   
   // Everything ran okey-dokey, so tell the OS we're good
   return 0;
