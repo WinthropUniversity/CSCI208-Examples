@@ -5,6 +5,8 @@
 #include<circle.h>
 #include<iostream>
 
+
+
 // Set the radius of the circle.
 // We call this an "accessor/mutator method" because we can use it
 // to access internal member variables.
@@ -18,22 +20,22 @@ void   Circle::SetRadius(double inRadius) {
   else radius_ = -inRadius;
 }
 
-double Circle::GetRadus() const {
+double Circle::GetRadius() const {
   return radius_;
 }
 
 
 // Return the area of the circle
-double Circle::GetArea() {
+double Circle::GetArea() const {
   return (PI * radius_ * radius_);
 }
 
 // Return the circumference of the circle
-double Circle::GetCircumference() {
+double Circle::GetCircumference() const {
   return (2* PI * radius_);
 }
 
-void Circle::PrintInfo() {
+void Circle::PrintInfo() const {
   std::cout << "Circle Radius:         " << radius_ << std::endl;
   std::cout << "Circle Area:           " << GetArea() << std::endl;
   std::cout << "Circle Circumference:  " << GetCircumference() << std::endl;

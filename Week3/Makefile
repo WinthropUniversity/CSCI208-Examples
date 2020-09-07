@@ -31,4 +31,4 @@ bettercircle-main:	bettercircle-main.cc bettercircle.h bettercircle.o
 # Clean up things
 clean:
 	rm *.o
-	rm bettercircle-main circle-main simple-class
+	rm -rf bettercircle-main circle-main simple-class
