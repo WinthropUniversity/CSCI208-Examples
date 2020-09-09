@@ -41,17 +41,29 @@ int main() {
   double numGB = 1.0;
 
   cout << endl;
+  cout << "If you are on hopper.winthrop.edu, try opening another window and doing the following:" << endl;
+  cout << "   1. Run the program 'top'." << endl;
+  cout << "   2. In top, press the 'o' character." << endl;
+  cout << "   3. Type the following and hit return: COMMAND=leaky" << endl;
+  cout << "   4. Pay attention to the value in the VIRT field." << endl;
+  cout << endl;
   cout << "Let's leak some memory!" << endl;
+  cout << endl;
+
   while (numGB > 0.0) {
-    cout << "  Enter the number of GBs you want to allocate (<=0 quits): ";
+    cout << "Enter the number of GBs you want to allocate (<=0 quits): ";
     cin >> numGB;
 
     leakSomeMemory(numGB);
-    cout << "  Now go check to see what the OS says ..." << endl << endl;
+    cout << "Now go check to see what the OS says ..." << endl << endl;
   }
 
   cout << "Everything should be returned after the program exists!" << endl;
   cout << endl;
+  
+  cout << "Obviously, the point of this is to show you what *not* to do.  " 
+       << "If you lose the value of a pointer before the pointer can be "
+       << "deallocated, you will not be able to free its memory." << endl << endl;
   
   // Everything ran okey-dokey, so tell the OS we're good
   return 0;
