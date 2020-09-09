@@ -24,6 +24,10 @@ void leakSomeMemory(int numMB) {
   cout << "  Allocating an int array of size " << numMB*ONE_MB_NUMINT << endl;
   arrayToCreateThenIgnore = new int [ numMB*ONE_MB_NUMINT ];
 
+  char foo[20];
+  cout << "Hit return";
+  cin >> foo;
+
   // Now leave the function, losing track of the arrayToCreateThenIgnore pointer ...
   // We cannot get it back, so we cannot free it ...
 }
