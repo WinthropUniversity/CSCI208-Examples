@@ -8,7 +8,7 @@ CC=g++
 CFLAGS=-I. 
 
 # Build all examples
-all:	simple-indirection ref-deref dynarray dynobj vectorexample leaky
+all:	simple-indirection ref-deref dynarray dynobj vectorexample leaky 2dvectorexample
 
 
 ## First example.  The "$@" here is a shortcut in gmake and means "the target".  The
@@ -36,6 +36,10 @@ vectorexample:	vectorexample.cc
 	$(CC) $(CFLAGS) -o $@ $<
 
 # Sixth example:
+2dvectorexample:  2dvectorexample.cc
+	$(CC) $(CFLAGS) -o $@ $<
+
+# Crazy example:
 leaky:	leaky.cc
 	$(CC) $(CFLAGS) -o $@ $<
 
@@ -43,4 +47,4 @@ leaky:	leaky.cc
 # Clean up things
 clean:
 	rm -f *.o
-	rm simple-indirection ref-deref dynarray dynobj vectorexample leaky
+	rm simple-indirection ref-deref dynarray dynobj vectorexample 2dvectorexample leaky
