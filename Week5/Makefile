@@ -47,4 +47,4 @@ leaky:	leaky.cc
 # Clean up things
 clean:
 	rm -f *.o
-	rm simple-indirection ref-deref dynarray dynobj vectorexample 2dvectorexample leaky
+	rm -f simple-indirection ref-deref dynarray dynobj vectorexample 2dvectorexample leaky

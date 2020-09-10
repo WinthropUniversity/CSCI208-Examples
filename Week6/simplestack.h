@@ -1,5 +1,5 @@
-#ifndef STACK_
-#define STACK_
+#ifndef SIMPLESTACK_
+#define SIMPLESTACK_
 
 #include<iostream>
 #include<string>
@@ -7,9 +7,9 @@
 
 using namespace std;
 
-class Stack {
+class SimpleStack {
 public:
-  Stack();
+  SimpleStack();
 
   void Push(string data);
   string Pop();

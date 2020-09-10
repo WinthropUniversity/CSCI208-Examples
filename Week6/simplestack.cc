@@ -1,4 +1,4 @@
-#include<stack.h>
+#include<simplestack.h>
 #include<node.h>
 
 
@@ -8,14 +8,14 @@
  * to the first node ... when empty, it points
  * to NULL.
  **/
-Stack::Stack() : front_(NULL) {}
+SimpleStack::SimpleStack() : front_(NULL) {}
 
 
 /**
  * Put a new item on the front of the stack.
  *  @param data A string holding data we want to keep.
  **/
-void Stack::Push(string data) {
+void SimpleStack::Push(string data) {
   Node *newNode = new Node(data, front_);
   front_ = newNode;
 }
@@ -26,7 +26,7 @@ void Stack::Push(string data) {
  * with the node.
  *  @return The value from the front of the list
  **/
-string Stack::Pop() {
+string SimpleStack::Pop() {
   string returnData = "";
 
   if (!IsEmpty()) {
@@ -45,7 +45,7 @@ string Stack::Pop() {
  * Return an indicator as to whether the stack is empty or not.
  *  @return Boolean indicating the stack is empty.
  **/
-bool Stack::IsEmpty() const {
+bool SimpleStack::IsEmpty() const {
   return (front_ == NULL); 
 }
 
@@ -53,7 +53,7 @@ bool Stack::IsEmpty() const {
 /**
  * Pop off the stack until it is empty
  **/
-void Stack::Clear() {
+void SimpleStack::Clear() {
   while (!IsEmpty()) Pop();
 }
 
@@ -61,7 +61,7 @@ void Stack::Clear() {
  * Print the contents of the stack so that the top-most printed 
  * value represents the "front" of the stack.
  **/
-void Stack::PrintStack() const {
+void SimpleStack::PrintStack() const {
   Node *current = front_;
 
   // Header
@@ -80,7 +80,7 @@ void Stack::PrintStack() const {
 // Perform unit tests if the unit test flag is on
 #ifdef UNITTEST
 int main() {
-  Stack stack;
+  SimpleStack stack;
 
   cout << endl << "Loading the stack ..." << endl << endl;
   stack.Push("This will be at the end");
