@@ -12,6 +12,25 @@ SimpleStack::SimpleStack() : front_(NULL) {}
 
 
 /**
+ * A deep copy constructor.  When this is done, the entire
+ * stack is replicated, contents and all;
+ **/
+SimpleStack::SimpleStack(const SimpleStack &sourceStack) {
+  this->front_ = NULL;
+
+  // Get the current node of the *source* stack 
+  Node *current = sourceStack.front_;
+
+  // Spin through the source stack, and push data into
+  // *this* stack from the source stack nodes.
+  while (current != NULL) {
+    this->Push(current->GetData());
+    current = current->GetNextNode();
+  }
+}
+
+  
+/**
  * Put a new item on the front of the stack.
  *  @param data A string holding data we want to keep.
  **/
@@ -79,6 +98,14 @@ void SimpleStack::PrintStack() const {
 
 // Perform unit tests if the unit test flag is on
 #ifdef UNITTEST
+void testCopyConstructor(SimpleStack receivingStack) {
+  cout << "Let's pop a value off the receiving stack so we can see it is a copy." << endl;
+  cout << "Here's the stack after that" << endl;
+  receivingStack.Pop();
+  receivingStack.PrintStack();
+}
+
+
 int main() {
   SimpleStack stack;
 
@@ -94,6 +121,14 @@ int main() {
   cout << "  Second pop: " << stack.Pop() << endl;
   cout << endl;
 	  
+  stack.PrintStack();
+
+  cout << endl;
+  cout << "Now we'll send the stack to a function so it will run the copy constructor..." << endl;
+  testCopyConstructor(stack);
+  cout << endl;
+
+  cout << "But those elements are still there in the original stack (before the call) ..." << endl;
   stack.PrintStack();
 
   cout << endl;

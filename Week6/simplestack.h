@@ -10,6 +10,7 @@ using namespace std;
 class SimpleStack {
 public:
   SimpleStack();
+  SimpleStack(const SimpleStack &sourceStack); // Copy constructor ...
 
   void Push(string data);
   string Pop();
