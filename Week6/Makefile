@@ -1,7 +1,5 @@
 ### --- Environmental Variables --- ###
 
-PROGRAMS=stack-main
-
 # Compiler/Linker env vars
 CC=g++
 CFLAGS=-I$(INCDIR) 
@@ -25,12 +23,20 @@ OBJECTS  := $(SOURCES:$(SRCDIR)/%.cc=$(OBJDIR)/%.o)
 ### --- Build Target Rules --- ###
 
 .PHONY: all
-all:  $(BINDIR)/$(PROGRAMS)  $(BINDIR)/$(TESTS)
+all:  $(BINDIR)/stack-main  $(BINDIR)/inout-main  $(BINDIR)/stack-tester
+
+# Make these individually so that we don't run into ambiguous main issues
+$(BINDIR)/stack-main: $(OBJDIR)/stack-main.o $(OBJDIR)/simplestack.o $(OBJDIR)/node.o
+	$(LINKER) -o $@ $(LDFLAGS)  $^
+
+$(BINDIR)/inout-main: $(OBJDIR)/inout-main.o
+	$(LINKER) -o $@ $(LDFLAGS)  $^
 
 
-# For the target program, link all objects into executable
-$(BINDIR)/$(PROGRAMS):	$(OBJECTS)
-	$(LINKER) -o $@  $(OBJECTS) $(LDFLAGS) 
+# Unit testing binaries ...
+$(BINDIR)/stack-tester: $(OBJDIR)/simplestack.o $(OBJDIR)/node.o
+	$(CC) $(CFLAGS) -DUNITTEST -o $@   $(SRCDIR)/simplestack.cc  $(OBJDIR)/node.o
+
 
 # For every object file in the object file set,
 # compile the related cc file
@@ -38,8 +44,13 @@ $(OBJECTS):	$(OBJDIR)/%.o : $(SRCDIR)/%.cc
 	$(CC) $(CFLAGS)  -o $@  -c $<
 
 
+# Used to make documentation via Doxygen
+.PHONY: docs
+docs:	
+	doxygen doxygen.cfg
+
 # Use ".PHONY" so we don't confuse with a target named "clean"
 .PHONY:	clean
 clean:
 	rm -f $(OBJECTS)
-	rm -f $(BINDIR)/$(PROGRAMS)
+	rm -f $(BINDIR)/*
