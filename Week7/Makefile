@@ -1,38 +1,45 @@
+### --- Environmental Variables --- ###
 
+PROGRAMS=sortedlist
 
-# Let's get used to using environmental variables for some things
-# Here we'll use:
-#   $CC for the compiler
-#   $CFLAGS to set where the include directory is (here, ".")
+# Compiler/Linker env vars
 CC=g++
-CFLAGS=-I. 
+CFLAGS=-I$(INCDIR)  -DUNITTEST
+#TESTFLAGS=-DUNITTEST   ^^^ Remove later
+LDFLAGS=
+LINKER=g++
 
-# Build all examples
-all:	sortedlist
+# Make env vars for the different directories we will use
+OBJDIR=./obj
+SRCDIR=./src
+INCDIR=./inc
+BINDIR=./bin
 
-
-## First example.  The "$@" here is a shortcut in gmake and means "the target".  The
-## "$<" means the first dependency.  It is customary for this to be the source file
-## you are building.
-
-# If we include a main() function in multiple C++ source files, we'll get
-# an error.  But we can use the pre-processor to help us.  Here I go ahead
-# and define UNITTEST while compiling, which should cause the pre-processor
-# to include the main() that's in sortedlist.cc.
-sortedlist:	sortedlist.cc sortedlist.h listnode.o
-	$(CC) $(CFLAGS) -DUNITTEST  -o $@  $<  listnode.o
-
-# Otherwise, if we're just going to link to the code from some other
-# executable, we can build the object file without the main by leaving
-# out the define for UNITTEST
-sortedlist.o:	sortedlist.cc sortedlist.h listnode.h
-	$(CC) $(CFLAGS) -c $<
-
-listnode.o:	listnode.cc listnode.h
-	$(CC) $(CFLAGS) -c $< 
+# Create file groups for each directory
+SOURCES  := $(wildcard $(SRCDIR)/*.cc)
+INCLUDES := $(wildcard $(SRCDIR)/*.h)
+OBJECTS  := $(SOURCES:$(SRCDIR)/%.cc=$(OBJDIR)/%.o)
+# ^^ i.e., a .o file in OBJDIR for every .cc file in SRCDIR
 
 
-# Clean up things
+### --- Build Target Rules --- ###
+
+.PHONY: all
+all:  $(BINDIR)/$(PROGRAMS)  $(BINDIR)/$(TESTS)
+
+
+# For the target program, link all objects into executable
+$(BINDIR)/$(PROGRAMS):	$(OBJECTS)
+	$(LINKER) -o $@  $(OBJECTS) $(LDFLAGS) 
+
+# For every object file in the object file set,
+# compile the related cc file
+$(OBJECTS):	$(OBJDIR)/%.o : $(SRCDIR)/%.cc
+	$(CC) $(CFLAGS)  -o $@  -c $<
+
+
+# Use ".PHONY" so we don't confuse with a target named "clean"
+.PHONY:	clean
 clean:
-	rm -f *.o
-	rm -f sortedlist
+	rm -f $(OBJECTS)
+	rm -f $(BINDIR)/$(PROGRAMS)
