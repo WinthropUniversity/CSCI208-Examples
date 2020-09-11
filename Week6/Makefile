@@ -5,6 +5,7 @@ PROGRAMS=stack-main
 # Compiler/Linker env vars
 CC=g++
 CFLAGS=-I$(INCDIR) 
+#TESTFLAGS=-DUNITTEST
 LDFLAGS=
 LINKER=g++
 
@@ -23,11 +24,15 @@ OBJECTS  := $(SOURCES:$(SRCDIR)/%.cc=$(OBJDIR)/%.o)
 
 ### --- Build Target Rules --- ###
 
-# Rule 1: For the target, link all objects into executable
+.PHONY: all
+all:  $(BINDIR)/$(PROGRAMS)  $(BINDIR)/$(TESTS)
+
+
+# For the target program, link all objects into executable
 $(BINDIR)/$(PROGRAMS):	$(OBJECTS)
 	$(LINKER) -o $@  $(OBJECTS) $(LDFLAGS) 
 
-# Rule 2: For every object file in the object file set,
+# For every object file in the object file set,
 # compile the related cc file
 $(OBJECTS):	$(OBJDIR)/%.o : $(SRCDIR)/%.cc
 	$(CC) $(CFLAGS)  -o $@  -c $<
