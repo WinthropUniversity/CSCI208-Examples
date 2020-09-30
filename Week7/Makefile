@@ -1,10 +1,10 @@
 ### --- Environmental Variables --- ###
 
-PROGRAMS=sortedlist
+PROGRAMS=binarytree
 
 # Compiler/Linker env vars
 CC=g++
-CFLAGS=-I$(INCDIR)  -DUNITTEST
+CFLAGS=-I$(INCDIR) -DTREEUNITTEST
 #TESTFLAGS=-DUNITTEST   ^^^ Remove later
 LDFLAGS=
 LINKER=g++
