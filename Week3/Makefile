@@ -7,6 +7,9 @@
 CC=g++
 CFLAGS=-I.
 
+
+all:	circle-main bettercircle-main
+
 ## First Example
 simple-class:	simple-class.cc
 	$(CC) $(CFLAGS) -o simple-class  simple-class.cc
@@ -30,5 +33,5 @@ bettercircle-main:	bettercircle-main.cc bettercircle.h bettercircle.o
 
 # Clean up things
 clean:
-	rm *.o
+	rm -rf *.o
 	rm -rf bettercircle-main circle-main simple-class
