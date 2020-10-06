@@ -19,7 +19,7 @@ Circle::Circle(double inRadius) {
 // to access internal member variables.
 void   Circle::SetRadius(double inRadius) {
   // Negative radiuses don't make sense, so ...
-  
+
   // If it is positive, set it as given
   if (inRadius >= 0)  this->radius_ = inRadius;
 
@@ -47,4 +47,3 @@ void Circle::PrintInfo() {
   std::cout << "Circle Area:           " << this->GetArea() << std::endl;
   std::cout << "Circle Circumference:  " << this->GetCircumference() << std::endl;
 }
-
