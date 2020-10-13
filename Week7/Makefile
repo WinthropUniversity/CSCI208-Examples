@@ -1,13 +1,16 @@
 ### --- Environmental Variables --- ###
 
+## RPW:  Uncomment one of these, comment the others
 #PROGRAMS=binarytree
 #PROGRAMS=sortedlist
 PROGRAMS=select-and-sort
 
 # Compiler/Linker env vars
 CC=g++
-#CFLAGS=-I$(INCDIR) -DUNITTEST
+
+## RPW:  Use the first if building binary tree, second if sorted list, etc.
 #CFLAGS=-I$(INCDIR) -DTREEUNITTEST
+#CFLAGS=-I$(INCDIR) -DUNITTEST
 CFLAGS=-I$(INCDIR)
 
 LDFLAGS=
