@@ -86,6 +86,11 @@ double mean(double array[], int size) {
 }
 
 
+void sillyByValueTest(int x) {
+  x = 0;
+}
+
+
 // The main program
 int main() {
   double grades[MAX_ARRAY_SIZE];  // Allocate an array of length MAX_ARRAY_SIZE
@@ -100,6 +105,10 @@ int main() {
   std::cout << "Number of values found: " << numGrades << std::endl;
   std::cout << "Average of the values:  " << std::setprecision(4) << average << std::endl;
 
+  int x = 3;
+  std::cout << "Before pass, x=" << x << std::endl;
+  sillyByValueTest(x);
+  std::cout << "After pass, x=" << x << std::endl;
   // Everything ran okey-dokey, so tell the OS we're good
   return 0;
 }

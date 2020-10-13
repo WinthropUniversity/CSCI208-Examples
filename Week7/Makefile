@@ -1,11 +1,15 @@
 ### --- Environmental Variables --- ###
 
-PROGRAMS=binarytree
+#PROGRAMS=binarytree
+#PROGRAMS=sortedlist
+PROGRAMS=select-and-sort
 
 # Compiler/Linker env vars
 CC=g++
-CFLAGS=-I$(INCDIR) -DTREEUNITTEST
-#TESTFLAGS=-DUNITTEST   ^^^ Remove later
+#CFLAGS=-I$(INCDIR) -DUNITTEST
+#CFLAGS=-I$(INCDIR) -DTREEUNITTEST
+CFLAGS=-I$(INCDIR)
+
 LDFLAGS=
 LINKER=g++
 
@@ -30,7 +34,7 @@ all:  $(BINDIR)/$(PROGRAMS)  $(BINDIR)/$(TESTS)
 
 # For the target program, link all objects into executable
 $(BINDIR)/$(PROGRAMS):	$(OBJECTS)
-	$(LINKER) -o $@  $(OBJECTS) $(LDFLAGS) 
+	$(LINKER) -o $@  $(OBJECTS) $(LDFLAGS)
 
 # For every object file in the object file set,
 # compile the related cc file
