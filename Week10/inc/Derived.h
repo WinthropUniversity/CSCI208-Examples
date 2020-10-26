@@ -13,9 +13,10 @@ public:
   ~Derived();
 
   int GetGreatNumber() const;
-  
+
 protected:
   int greatNumber_;
+  double *numberlist_;
 };
 
 #endif
