@@ -12,7 +12,7 @@ class SeriesDivergesException: public exception {
 public:
   virtual const char* what() const throw()
   {
-    return "A series diverged.";
+    return "ERROR: A series diverged.";
   }
 };
 

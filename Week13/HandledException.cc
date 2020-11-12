@@ -12,7 +12,7 @@ class SeriesDivergesException: public exception
 {
   virtual const char* what() const throw()
   {
-    return "A series diverged.";
+    return "ERROR: A series diverged.";
   }
 };
 
@@ -44,7 +44,7 @@ int main() {
     cout << "Series value: " << ComputeSeries(a) << endl;
   }
   catch (SeriesDivergesException &e) {
-    cout << "ERROR:  Unfortunately, that series diverges." << endl;
+    cerr << "Unfortunately, that series diverges." << endl;
   }
 
   // Yay!  We're done.
