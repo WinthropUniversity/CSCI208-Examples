@@ -97,11 +97,14 @@ Complex operator*(const Complex &p1, const Complex &p2) {
 /**
  *  This function computes the division of two complex numbers
  *  and returns a complex number.
+ *
+ *  If there is a divide by zero problem, then this operation
+ *  will raise an exception that the caller must deal with.
  *    @param p1 The left-side parameter of the operation
  *    @param p2 The right-side parameter of the operation
  *    @return The result of the division.
  **/
-Complex operator/(const Complex &p1, const Complex &p2) {
+Complex operator/(const Complex &p1, const Complex &p2) throw(DivideByZeroException) {
   // Just to make things a bit easier to read below, let's shorten names
   double a = p1.real_;
   double b = p1.imaginary_;
@@ -109,6 +112,9 @@ Complex operator/(const Complex &p1, const Complex &p2) {
   double d = p2.imaginary_;
 
   double denom = c*c + d*d;
+
+  // If there is a divide by zero problem, raise an exception
+  if (denom == 0.) throw DivideByZeroException();
 
   //                 real             imaginary
   Complex result( (a*c + b*d)/denom, (b*c - a*d)/denom );
@@ -130,7 +136,7 @@ ostream &operator<<(ostream &output, const Complex &p1) {
     output << "(" << p1.real_ << " + " << p1.imaginary_ << + "i)";
 
   // Negative imaginary coefficient
-  else // if (p1.imaginary_ < 0) 
+  else // if (p1.imaginary_ < 0)
     output << "(" << p1.real_ << " - " << -p1.imaginary_ << + "i)";
 
   return output;
@@ -140,6 +146,11 @@ ostream &operator<<(ostream &output, const Complex &p1) {
  *  This function allows complex numbers to be inputted in
  *  an input stream without a special set functions.  It assumes
  *  the real coefficient comes first, then the imaginary coefficient.
+ *
+ *  This routine assumes that any failbit error because of bad input
+ *  will be dealt with by the caller.  It does *not* fix or throw
+ *  excetions directly, unless ios::failbit exception is turned on
+ *  in iostream.
  *    @param input The stream object being used for inputting
  *    @param p1 The complex number to be inputted
  *    @return The input stream object so it can be chained.
