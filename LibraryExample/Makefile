@@ -45,6 +45,10 @@ $(LIBDIR)/$(LIBRARY):	$(OBJDIR)/Complex.o
 $(OBJECTS):	$(OBJDIR)/%.o : $(SRCDIR)/%.cc
 	$(CC) $(CFLAGS)  -o $@  -c $<
 
+# Use ".PHONY" so we don't confuse with a target named "clean"
+.PHONY:	docs
+docs:
+	doxygen doxygen.cfg
 
 # Use ".PHONY" so we don't confuse with a target named "clean"
 .PHONY:	clean

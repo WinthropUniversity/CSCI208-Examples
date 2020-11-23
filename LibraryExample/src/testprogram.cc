@@ -16,11 +16,18 @@ int main() {
   cin >> p2;
 
   cout << endl;
-  
+
   cout << p1 << "  +  " << p2 << "  =  " << (p1+p2) << endl;
   cout << p1 << "  -  " << p2 << "  =  " << (p1-p2) << endl;
   cout << p1 << "  *  " << p2 << "  =  " << (p1*p2) << endl;
-  cout << p1 << "  /  " << p2 << "  =  " << (p1/p2) << endl;
 
-  return 1;
+  try {
+    cout << p1 << "  /  " << p2 << "  =  " << (p1/p2) << endl;
+  } catch (DivideByZeroException &e) {
+    cerr << e.what() << endl;
+  }
+
+  cout << "We're done!" << endl;
+  
+  return 0;
 }
