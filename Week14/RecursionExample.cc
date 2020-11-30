@@ -118,7 +118,7 @@ vector<int> ArrangeTwoItems(const vector<int> &unsortedlist, int begin, int end)
 
 
 vector<int> MergeSort(const vector<int> &unsortedlist, int begin, int end) {
-  int n = (end - begin + 1);//unsortedlist.size();
+  int n = (end - begin + 1);
   vector<int> sortedlist;
 
   // If there are at most two items, just order them
