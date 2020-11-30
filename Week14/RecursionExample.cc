@@ -138,9 +138,9 @@ vector<int> MergeSort(const vector<int> &unsortedlist, int begin, int end) {
 //Node *BintreeFind(Node *current, string key) {
 //  if (current == NULL)   return NULL;
 //
-//  else if (current->GetKey() < key)  return BintreeFind(current->GetLeft());
+//  else if (current->GetKey() < key)  return BintreeFind(current->GetLeft(), key);
 //  else if (current->GetKey() == key) return current;
-//  else if (current->GetKey() > key)  return BintreeFind(current->GetRight());
+//  else if (current->GetKey() > key)  return BintreeFind(current->GetRight(), key);
 //}
 
 
