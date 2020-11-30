@@ -175,7 +175,7 @@ int main() {
   unsorted.push_back(17);
   unsorted.push_back(12);
 
-  cout << "Unorted: ";
+  cout << "Unsorted: ";
   for (int x : unsorted)
     cout << "  " << x;
   cout << endl;
