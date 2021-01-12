@@ -1,3 +1,5 @@
+#Example Makefile
+
 all:	hello.o main.o
 	g++ -o myprogram  hello.o main.o
 
