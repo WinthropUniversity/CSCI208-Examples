@@ -1,6 +1,8 @@
 #Example Makefile
 
-all:	hello.o main.o
+all:	myprogram
+
+myprogram: hello.o main.o
 	g++ -o myprogram  hello.o main.o
 
 hello.o:  hello.cc hello.h
