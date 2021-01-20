@@ -18,17 +18,17 @@ struct Date {
 /**
  * A simple function that asks about a day of the user and returns
  * that information
- * 
+ *
  * @return  Date record of how a particular day the user described
  */
 Date askUserAboutDay() {
   Date currentDate;
 
   std::cout << "Think of an important day, then answer these questions:" << std::endl;
-  
+
   std::cout << "  What was the day of the month? ";
   std::cin >> currentDate.day;
-  
+
   std::cout << "  What was the numeric month (1-12)? ";
   std::cin >> currentDate.month;
 
@@ -69,17 +69,18 @@ int main() {
   do {
     std::cout << "I'm going to ask you about somes days of your life." << std::endl;
     printDay(askUserAboutDay());
-    
+
     std::cout << "Ask about more days? ";
     std::cin >> keepGoing;
     std::cout << std::endl;
   } while (keepGoing == 'y');
 
-  std::cout << "What is 'false'?  " << (int)false << std::endl;  
-  std::cout << "What is 'true'?   " << (int)true << std::endl;  
+  std::cout << "What is 'false'?  " << (int)false << std::endl;
+  std::cout << "What is 'true'?   " << (int)true << std::endl;
 
+  int x = 9;
   if (2 == x)  std::cout << "42 is true!" << std::endl;
-  
+
   // Everything ran okey-dokey, so tell the OS we're good
   return 0;
 }
