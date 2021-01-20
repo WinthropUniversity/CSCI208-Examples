@@ -18,7 +18,7 @@
  * "side effect" of being able to change array values in the
  * function because an array in C++ is really just a pointer
  * to an area in memory.
- * 
+ *
  * @param gradesArray  A pre-allocated double array in which to store grades
  * @return  The total number of grades found in the file.
  */
@@ -31,7 +31,7 @@ int readGradefile(double gradesArray[]) {
   gradeFile.open(gradeFilename);
   if (!gradeFile.is_open()) {
     std::cout << "Could not open file " << gradeFilename << std::endl;
-    return 1; // Exit with error status 1, indicates error
+    return 0; // Exit with error status 1, indicates error
   }
 
   // Read from the input file until you hit the
@@ -69,7 +69,7 @@ int readGradefile(double gradesArray[]) {
  * This spins through an array and computes the average (mean)
  * of those values.  I've kept the parameter names general because
  * it could be used for lots of things.
- * 
+ *
  * @param array  An array of double values for which to compute the mean
  * @param size   The size of the values in the array over which to compute
  * @return  The average of the values in the array
@@ -78,7 +78,7 @@ double mean(double array[], int size) {
   double total = 0.0;
 
   // Sum up all the values in the array
-  for (int idx=0; idx<size; idx++) 
+  for (int idx=0; idx<size; idx++)
     total += array[idx];
 
   // Return the total / size
