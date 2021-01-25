@@ -3,6 +3,7 @@
 
 #include<iostream>
 #include<bettercircle.h>
+#include<square.h>
 
 // Put ourselves in the standard namespace.
 // Now I don't have to say "std::" before things.
@@ -27,7 +28,7 @@ int main() {
   // Don't need to set it now because I did it in construction
   cout << "Little Circle: " << endl;
   littleCircle.PrintInfo();
-  
+
   cout << endl;  // Output a blank line
 
   // Report on the funny circle
@@ -36,6 +37,10 @@ int main() {
   funnyCircle.PrintInfo();
 
   cout << endl;  // Output a blank line
+
+  Square mySquare(-314.2);
+
+  cout << "Square's perimeter = " << mySquare.GetPerimeter() << endl;
 
   // Everything ran okey-dokey, so tell the OS we're good
   return 0;

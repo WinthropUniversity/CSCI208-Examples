@@ -19,8 +19,8 @@ private:
 // These memebers and methods can be seen by anything
 public:
   // Constructors
-  Circle();
-  Circle(double inRadius);
+  Circle();  // default constructor
+  Circle(double inRadius);  // initilizer constructor
 
   // Declare these methods here, but actuall *define* them in Circle.cc
   void SetRadius(double inRadius);

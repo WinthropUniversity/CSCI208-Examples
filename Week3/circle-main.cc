@@ -27,7 +27,7 @@ int main() {
   littleCircle.SetRadius(0.5);
   cout << "Little Circle: " << endl;
   littleCircle.PrintInfo();
-  
+
   cout << endl;  // Output a blank line
 
   // Report on the funny circle
