@@ -27,8 +27,11 @@ circle-main:	circle-main.cc circle.h circle.o
 bettercircle.o:	bettercircle.h bettercircle.cc
 	$(CC) $(CFLAGS) -c bettercircle.cc
 
-bettercircle-main:	bettercircle-main.cc bettercircle.h bettercircle.o
-	$(CC) $(CFLAGS) -o bettercircle-main  bettercircle-main.cc  bettercircle.o
+square.o:	square.h square.cc
+	$(CC) $(CFLAGS) -c square.cc
+
+bettercircle-main:	bettercircle-main.cc bettercircle.h bettercircle.o square.o
+	$(CC) $(CFLAGS) -o bettercircle-main  bettercircle-main.cc  bettercircle.o square.o
 
 
 # Clean up things

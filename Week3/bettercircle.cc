@@ -5,7 +5,7 @@
 #include<bettercircle.h>
 #include<iostream>
 
-
+// Default Constructor
 Circle::Circle() : radius_(0.0) {}
 
 // The above code basically does the same as this would:
@@ -14,6 +14,7 @@ Circle::Circle() : radius_(0.0) {}
 //}
 
 
+// Initialization constructor
 Circle::Circle(double inRadius) {
   this->SetRadius(inRadius);
 }
@@ -23,7 +24,7 @@ Circle::Circle(double inRadius) {
 // Set the radius of the circle.
 // We call this an "accessor/mutator method" because we can use it
 // to access internal member variables.
-void   Circle::SetRadius(double inRadius) {
+void Circle::SetRadius(double inRadius) {
   // Negative radiuses don't make sense, so ...
 
   // If it is positive, set it as given
@@ -33,7 +34,8 @@ void   Circle::SetRadius(double inRadius) {
   else this->radius_ = -inRadius;
 }
 
-double Circle::GetRadus() const {
+
+double Circle::GetRadius() const {
   return this->radius_;
 }
 
