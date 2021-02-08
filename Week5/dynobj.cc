@@ -20,7 +20,7 @@ private:
 void changeNothing(int x) {
   x = x*x;
 }
-  
+
 
 void changeIt(int &x) {
   x = x*x;
@@ -35,6 +35,7 @@ int main() {
   cout << endl;
   cuberptr = new CuberClass(3.0);
   cout << "3 + 6^3 = " << cuberptr->CubePlusOffset(6) << endl;
+  //cout << "3 + 6^3 = " << (*cuberptr).CubePlusOffset(6) << endl;
 
   cout << endl;
 
@@ -42,13 +43,13 @@ int main() {
   int x = 2;
   changeNothing(x);
   cout << "The value of x after running changeNothing(x) = " << x << endl;
-  
+
   // By reference pass
   changeIt(x);
   cout << "The value of x after running changeIt(x) = " << x << endl;
 
   cout << endl;
-  
+
   // Everything ran okey-dokey, so tell the OS we're good
   return 0;
 }

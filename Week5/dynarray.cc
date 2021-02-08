@@ -21,7 +21,7 @@ int main() {
   // Allocate listsize amount of contiguous space for integers
   // and give me back the address to that space
   numberlist = new int[listsize];
-  
+
   for (int idx=0; idx<listsize; idx++) {
     cout << "In[" << idx << "]: ";
     cin >> numberlist[idx];
@@ -35,12 +35,13 @@ int main() {
   // Show the hard way to reference items in the array ...
   if (listsize > 2)
     cout << "Second item was: " << *(numberlist + 1) << endl;
-  
+
   // Now you had better deallocate the list ...
   delete [] numberlist;
+  numberlist = NULL;
 
   cout << endl;
-  
+
   // Everything ran okey-dokey, so tell the OS we're good
   return 0;
 }
