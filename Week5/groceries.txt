@@ -1,0 +1,7 @@
+tomatoes 10
+apples 2
+bacon 100
+towels 1
+cheese 75
+paper 82
+
