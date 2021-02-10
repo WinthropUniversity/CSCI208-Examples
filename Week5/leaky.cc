@@ -15,19 +15,19 @@ using namespace std;
 
 
 /**
- * This function will allocate an array that should consume 
+ * This function will allocate an array that should consume
  * roughly the number of MB specified, then fail to free it.
- * You can use 
+ * You can use
  */
 void leakSomeMemory(double numGB) {
    // Create our pointer ...
   int sizeOfArray = (int) (numGB * ONE_GB_NUMINT);
-  int *arrayToCreateThenIgnore = new int [ sizeOfArray ];; 
+  int *arrayToCreateThenIgnore = new int [ sizeOfArray ]; 
 
   // Allocate numMB MB's worth of space
   cout << "  Allocated an int array of size " << sizeOfArray << endl;
   cout << "  This comes to about " << sizeOfArray*sizeof(int)/(1024*1024*1024) << "GBs" << endl;
-  
+
   // Now leave the function, losing track of the arrayToCreateThenIgnore pointer ...
   // We cannot get it back, so we cannot free it ...
 }
@@ -60,11 +60,11 @@ int main() {
 
   cout << "Everything should be returned after the program exists!" << endl;
   cout << endl;
-  
-  cout << "Obviously, the point of this is to show you what *not* to do.  " 
+
+  cout << "Obviously, the point of this is to show you what *not* to do.  "
        << "If you lose the value of a pointer before the pointer can be "
        << "deallocated, you will not be able to free its memory." << endl << endl;
-  
+
   // Everything ran okey-dokey, so tell the OS we're good
   return 0;
 }
