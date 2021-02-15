@@ -13,7 +13,7 @@ public:
   string GetData() const;
 
   bool IsTerminalNode() const;
-  
+
 private:
   Node *next_;
   string data_; // In a real LL, this will be more general

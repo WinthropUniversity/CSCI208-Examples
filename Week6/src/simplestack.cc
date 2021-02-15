@@ -1,6 +1,6 @@
 #include<simplestack.h>
 #include<node.h>
-
+#include<iostream>
 
 /**
  * Initialize the stack so that it is empty.
@@ -18,7 +18,9 @@ SimpleStack::SimpleStack() : front_(NULL) {}
 SimpleStack::SimpleStack(const SimpleStack &sourceStack) {
   this->front_ = NULL;
 
-  // Get the current node of the *source* stack 
+  std::cout << "----- In the copy constructor!!! -----" << std::cout << std::endl;
+
+  // Get the current node of the *source* stack
   Node *current = sourceStack.front_;
 
   // Spin through the source stack, and push data into
@@ -29,7 +31,7 @@ SimpleStack::SimpleStack(const SimpleStack &sourceStack) {
   }
 }
 
-  
+
 /**
  * Put a new item on the front of the stack.
  *  @param data A string holding data we want to keep.
@@ -41,7 +43,7 @@ void SimpleStack::Push(string data) {
 
 /**
  * Get the value of the first node in the list, remove that
- * node, and return the value.  This frees memory associated 
+ * node, and return the value.  This frees memory associated
  * with the node.
  *  @return The value from the front of the list
  **/
@@ -54,7 +56,7 @@ string SimpleStack::Pop() {
     front_ = current->GetNextNode(); // Shortcut around that node
     delete current;                  // Deallocate the node
   }
-  
+
   return (returnData);
 }
 
@@ -65,7 +67,7 @@ string SimpleStack::Pop() {
  *  @return Boolean indicating the stack is empty.
  **/
 bool SimpleStack::IsEmpty() const {
-  return (front_ == NULL); 
+  return (front_ == NULL);
 }
 
 
@@ -77,7 +79,7 @@ void SimpleStack::Clear() {
 }
 
 /**
- * Print the contents of the stack so that the top-most printed 
+ * Print the contents of the stack so that the top-most printed
  * value represents the "front" of the stack.
  **/
 void SimpleStack::PrintStack() const {
@@ -120,7 +122,7 @@ int main() {
   cout << "  First pop:  " << stack.Pop() << endl;
   cout << "  Second pop: " << stack.Pop() << endl;
   cout << endl;
-	  
+
   stack.PrintStack();
 
   cout << endl;
@@ -135,11 +137,11 @@ int main() {
   cout << "Now totally clear the stack ..." << endl;
   stack.Clear();
   cout << endl;
-  
+
   stack.PrintStack();
 
   cout << endl;
-  
+
   return 0;
 }
 #endif

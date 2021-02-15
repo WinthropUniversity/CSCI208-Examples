@@ -2,8 +2,8 @@
 
 # Compiler/Linker env vars
 CC=g++
-CFLAGS=-I$(INCDIR) 
-#TESTFLAGS=-DUNITTEST
+CFLAGS=-I$(INCDIR)
+TESTFLAGS=-DUNITTEST
 LDFLAGS=
 LINKER=g++
 
@@ -46,7 +46,7 @@ $(OBJECTS):	$(OBJDIR)/%.o : $(SRCDIR)/%.cc
 
 # Used to make documentation via Doxygen
 .PHONY: docs
-docs:	
+docs:
 	doxygen doxygen.cfg
 
 # Use ".PHONY" so we don't confuse with a target named "clean"
