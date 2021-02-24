@@ -3,7 +3,7 @@
 # Compiler/Linker env vars
 CC=g++
 CFLAGS=-I$(INCDIR)
-TESTFLAGS=-DUNITTEST
+#TESTFLAGS=-DUNITTEST
 LDFLAGS=
 LINKER=g++
 

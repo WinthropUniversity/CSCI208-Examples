@@ -24,7 +24,7 @@ void SortedList::InsertData(string key, string data) {
     previousNode = currentNode;
     currentNode = currentNode->GetNextListNode();
 
-    if (currentNode->GetKey() > key) {      
+    if (currentNode->GetKey() > key) {
       // Wire it in by having the previous node point to the new node
       // and the new node point to the current node
       previousNode->PointToListNode(newNode);
@@ -49,14 +49,14 @@ void SortedList::InsertData(string key, string data) {
 /**
  * Find the first node matching the specified key, then
  * remove it from the linked list.  Free up the memory
- * associated with that node.  
+ * associated with that node.
  *  @return Return whether or not a node was found and removed.
  **/
 bool SortedList::DeleteData(string key) {
   ListNode *currentNode = front_;
   ListNode *previousNode = front_;
   bool found=false;
-  
+
   while ( (!found)  && (!currentNode->IsTerminalListNode()) ) {
     previousNode = currentNode;
     currentNode = currentNode->GetNextListNode();
@@ -90,7 +90,7 @@ bool SortedList::DeleteData(string key) {
 string SortedList::FindData(string key) {
   ListNode *currentNode = front_;
   string data = "";
-  
+
   while ( (data == "")  && (!currentNode->IsTerminalListNode()) ) {
     currentNode = currentNode->GetNextListNode();
 
@@ -152,7 +152,7 @@ void SortedList::PrintInOrder() const {
 
 
 // Perform unit tests if the unit test flag is on
-#ifdef UNITTEST
+#ifdef MAINsortedlist
 int main() {
   SortedList list;
 
@@ -169,19 +169,19 @@ int main() {
 
   cout << "Look for 'Edge' ..." << endl;
   cout << "List['Edge'] = " << list.FindData("Edge") << endl << endl;
-  
+
   cout << "Delete 'Dark' and 'Bold', then insert 'Blah' ..." << endl;
   list.DeleteData("Dark");
   list.DeleteData("Bold");
   list.InsertData("Blah", "Now this should be second");
   list.PrintInOrder();
-		 
+
   cout << endl << endl << "Clearing the list ..." << endl;
   list.ClearList();
   list.PrintInOrder();
 
   cout << endl;
-  
+
   return 0;
 }
 #endif

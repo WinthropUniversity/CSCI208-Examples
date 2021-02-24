@@ -122,6 +122,8 @@ void SelectionSort(vector<int> &numberList) {
 }
 
 
+// Perform unit tests if the unit test flag is on
+#ifdef MAINselectandsort
 int main() {
   vector<int> numberList;
   int listSize;
@@ -153,3 +155,5 @@ int main() {
   // Everything is A-Okay
   return 0;
 }
+
+#endif

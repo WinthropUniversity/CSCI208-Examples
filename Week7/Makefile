@@ -1,17 +1,16 @@
 ### --- Environmental Variables --- ###
 
 ## RPW:  Uncomment one of these, comment the others
-#PROGRAMS=binarytree
-#PROGRAMS=sortedlist
-PROGRAMS=select-and-sort
+PROGRAM=binarytree
+#PROGRAM=sortedlist
+#PROGRAM=selectandsort
 
 # Compiler/Linker env vars
 CC=g++
 
-## RPW:  Use the first if building binary tree, second if sorted list, etc.
-#CFLAGS=-I$(INCDIR) -DTREEUNITTEST
-#CFLAGS=-I$(INCDIR) -DUNITTEST
-CFLAGS=-I$(INCDIR)
+## RPW:  The -D flag creates a compile-time define that will select
+##       which source file will have its main compiled
+CFLAGS=-I$(INCDIR) -DMAIN$(PROGRAM)
 
 LDFLAGS=
 LINKER=g++
@@ -32,11 +31,11 @@ OBJECTS  := $(SOURCES:$(SRCDIR)/%.cc=$(OBJDIR)/%.o)
 ### --- Build Target Rules --- ###
 
 .PHONY: all
-all:  $(BINDIR)/$(PROGRAMS)  $(BINDIR)/$(TESTS)
+all:  $(BINDIR)/$(PROGRAM)  $(BINDIR)/$(TESTS)
 
 
 # For the target program, link all objects into executable
-$(BINDIR)/$(PROGRAMS):	$(OBJECTS)
+$(BINDIR)/$(PROGRAM):	$(OBJECTS)
 	$(LINKER) -o $@  $(OBJECTS) $(LDFLAGS)
 
 # For every object file in the object file set,
@@ -49,4 +48,4 @@ $(OBJECTS):	$(OBJDIR)/%.o : $(SRCDIR)/%.cc
 .PHONY:	clean
 clean:
 	rm -f $(OBJECTS)
-	rm -f $(BINDIR)/$(PROGRAMS)
+	rm -f $(BINDIR)/$(PROGRAM)
