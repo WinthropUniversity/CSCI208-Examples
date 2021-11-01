@@ -1,13 +1,20 @@
 #include<iostream>
-    
+#include<string>
+
 using namespace std;
     
 long factorial(int n);
    
 
+void otherfunction() {
+  cout << "Inside another function" << endl;
+}
+
 long factorial(int n) {
   long result = 1;
 
+  otherfunction();
+  
   while (n--)
     result *= n;
  
@@ -18,7 +25,8 @@ long factorial(int n) {
 int main() {
   int n = 0;
   cout << "Compute Factorial for: ";
-  cin >> n;
+  //cin >> n;
+  n = 12;
 
   long val = factorial(n);
   cout << "Result: " << val << endl;

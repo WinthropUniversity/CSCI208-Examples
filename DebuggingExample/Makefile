@@ -13,7 +13,7 @@ LDFLAGS=-ggdb
 .PHONY: all
 all:  badcode
 
-mandelbrot: badcode.cc
+badcode: badcode.cc
 	$(CC) $(CFLAGS) -o $@   $<   $(LDFLAGS)
 
 # Use ".PHONY" so we don't confuse with a target named "clean"
