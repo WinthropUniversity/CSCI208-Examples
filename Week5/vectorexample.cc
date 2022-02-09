@@ -19,7 +19,8 @@ int main() {
 
   // I could just treat this like any old array:
   for (int idx=0; idx<intVector.size(); ++idx)
-    cout << "  intVector[" << idx << "] = " << intVector[idx] << endl;
+    cout << "  intVector[" << idx << "] = " << intVector.at(idx) << endl;
+//    cout << "  intVector[" << idx << "] = " << intVector[idx] << endl;
   
   cout << "The vector's size:        " << intVector.size() << endl;
   cout << "The vector's capacity:    " << intVector.capacity() << endl;
