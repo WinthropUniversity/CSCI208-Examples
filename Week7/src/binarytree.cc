@@ -19,7 +19,7 @@ void BinaryTree::InsertData(string inKey, string inData) {
 
   // If the list is currently empty, make the new node the top node
   if (IsEmpty())
-  topNode_ = newNode;
+    topNode_ = newNode;
 
   // Otherwise, find a place for it in the tree
   else {

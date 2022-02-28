@@ -26,6 +26,7 @@ SimpleStack::SimpleStack(const SimpleStack &sourceStack) {
   // Spin through the source stack, and push data into
   // *this* stack from the source stack nodes.
   while (current != NULL) {
+    current->GetData();
     this->Push(current->GetData());
     current = current->GetNextNode();
   }
@@ -51,10 +52,10 @@ string SimpleStack::Pop() {
   string returnData = "";
 
   if (!IsEmpty()) {
-    Node *current = front_;          // Get the first real node
-    returnData = current->GetData(); // Grab its data
-    front_ = current->GetNextNode(); // Shortcut around that node
-    delete current;                  // Deallocate the node
+    Node *oldFront = front_;          // Get the first real node
+    returnData = oldFront->GetData(); // Grab its data
+    front_ = oldFront->GetNextNode(); // Shortcut around that node
+    delete oldFront;                  // Deallocate the node
   }
 
   return (returnData);

@@ -23,10 +23,11 @@ long factorial(int n) {
 
 
 int main() {
+  int reallycoolvariable;
   int n = 0;
   cout << "Compute Factorial for: ";
   //cin >> n;
-  n = 12;
+  n = 6;
 
   long val = factorial(n);
   cout << "Result: " << val << endl;
