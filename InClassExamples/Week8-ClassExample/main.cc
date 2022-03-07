@@ -6,7 +6,7 @@
 using namespace std;
 
 int main() {
-    Node *dummyHeadNode = new Node();
+    Node* dummyHeadNodePtr = new Node();
     string tempName;
     int tempRating;
     string done = "no";
@@ -18,8 +18,8 @@ int main() {
         cin >> tempRating;
 
         Node* newNodeToAdd = new Node(tempName, tempRating);
-        Node* tempPtr = dummyHeadNode->GetNextNodeRef();
-        dummyHeadNode->SetNextNodeRef(newNodeToAdd);
+        Node* tempPtr = dummyHeadNodePtr->GetNextNodeRef();
+        dummyHeadNodePtr->SetNextNodeRef(newNodeToAdd);
         newNodeToAdd->SetNextNodeRef(tempPtr);
         //newNodeToAdd->SetNextNodeRef(dummyHeadNode->GetNextNodeRef());
         //dummyHeadNode->SetNextNodeRef(newNodeToAdd);
@@ -28,7 +28,7 @@ int main() {
         cin >> done;
     } while (done != "yes");
 
-    Node* curr = dummyHeadNode->GetNextNodeRef();
+    Node* curr = dummyHeadNodePtr->GetNextNodeRef();
     while (curr != NULL) {
         cout << curr->GetVideoGame() << ", " << curr->GetRating() << endl;
         curr = curr->GetNextNodeRef();
