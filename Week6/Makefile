@@ -15,7 +15,7 @@ BINDIR=./bin
 
 # Create file groups for each directory
 SOURCES  := $(wildcard $(SRCDIR)/*.cc)
-INCLUDES := $(wildcard $(SRCDIR)/*.h)
+INCLUDES := $(wildcard $(INCDIR)/*.h)
 OBJECTS  := $(SOURCES:$(SRCDIR)/%.cc=$(OBJDIR)/%.o)
 # ^^ i.e., a .o file in OBJDIR for every .cc file in SRCDIR
 
