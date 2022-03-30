@@ -29,6 +29,7 @@ void AlternateFunction() {
 }
 
 
+#ifdef FOOBARBAZ
 
 int main() {
   cout << endl <<"Calling SimpleFunction() ..." << endl << endl;
@@ -47,3 +48,4 @@ int main() {
 
   exit(0);
 }
+#endif

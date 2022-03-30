@@ -1,7 +1,8 @@
 ### --- Environmental Variables --- ###
 
 
-PROGRAMS=createdestroy
+#PROGRAMS=createdestroy
+PROGRAMS=SimpleClassExample
 
 # Compiler/Linker env vars
 CC=g++
