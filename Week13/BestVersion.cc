@@ -26,6 +26,13 @@ public:
 };
 
 
+void SuperGreatFunction() {
+  cout << "Line 1, completed!" << endl;
+  throw 9.1;
+  cout << "Line 2, completed!" << endl; 
+}
+
+
 // Get the denominator from the user.
 double GetDenominator() throw(InvalidUserInput) {
   double a = 2.0;
@@ -82,5 +89,16 @@ int main() {
 
   // Yay!  We're done.
   cout << "Completed the work!" << endl;
+
+  try {
+    cout << endl << "Running SuperGreatFunction() now..." << endl;
+    SuperGreatFunction();
+    cout << "Wow, that was an awesome function!" << endl;
+  } catch (string &e) {
+    cout << "  ERROR:  Oh no!!  Our SuperGreatFunction() failed!" << endl;
+  }
+
+  cout << "Everything is okay.  Stopping my program now." << endl;
+
   return 0;
 }
