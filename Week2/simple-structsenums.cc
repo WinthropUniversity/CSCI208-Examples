@@ -56,8 +56,8 @@ Date askUserAboutDay() {
  */
 void printDay(Date myDate) {
   std::cout << myDate.month << "/"
-	    << myDate.day << "/"
-	    << myDate.year << "  "
+	          << myDate.day   << "/"
+	          << myDate.year  << "  "
             << (int)myDate.quality << std::endl << std::endl;
 }
 
@@ -79,8 +79,10 @@ int main() {
   std::cout << "What is 'true'?   " << (int)true << std::endl;
 
   int x = 9;
-  if (2 == x)  std::cout << "42 is true!" << std::endl;
+  if (2 == x) std::cout << "42 is true!" << std::endl;
 
+  std::cout << "I'm done!" << std::endl;
+  
   // Everything ran okey-dokey, so tell the OS we're good
   return 0;
 }

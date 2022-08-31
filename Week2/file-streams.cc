@@ -52,7 +52,7 @@ int main() {
   // Open the output file
   outputFile.open(outputFilename);
   if (!outputFile.is_open()) {
-    std::cout << "Could not open file " << inputFilename << std::endl;
+    std::cout << "Could not open file " << outputFilename << std::endl;
     return 1; // Exit with error status 1, indicates error
   }
 
