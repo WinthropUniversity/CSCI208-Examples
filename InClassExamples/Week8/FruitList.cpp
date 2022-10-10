@@ -20,7 +20,7 @@ int main() {
     FruitNode *newNode = new FruitNode(userFruitName);
 
     // Save off dummy header's next ptr
-    FruitNode *oldRealFirstNode = dummyHeader->GetNextNode()
+    FruitNode *oldRealFirstNode = dummyHeader->GetNextNode();
 
     // Connect the dummy header to the new node
     dummyHeader->SetNextNode(newNode);
