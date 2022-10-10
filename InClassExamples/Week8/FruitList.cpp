@@ -17,16 +17,18 @@ int main() {
     cout << "Name a fruit (or 'DONE' if finished): ";
     cin >> userFruitName;
 
-    FruitNode *newNode = new FruitNode(userFruitName);
+    if (userFruitName != "DONE") {
+        FruitNode *newNode = new FruitNode(userFruitName);
 
-    // Save off dummy header's next ptr
-    FruitNode *oldRealFirstNode = dummyHeader->GetNextNode();
+        // Save off dummy header's next ptr
+        FruitNode *oldRealFirstNode = dummyHeader->GetNextNode();
 
-    // Connect the dummy header to the new node
-    dummyHeader->SetNextNode(newNode);
+        // Connect the dummy header to the new node
+        dummyHeader->SetNextNode(newNode);
 
-    // Connect the new node to the old first node
-    newNode->SetNextNode(oldRealFirstNode);
+        // Connect the new node to the old first node
+        newNode->SetNextNode(oldRealFirstNode);
+    }
   } while (userFruitName != "DONE");
 
 
