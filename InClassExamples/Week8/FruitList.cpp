@@ -7,14 +7,10 @@ using namespace std;
 
 int main() {
   FruitNode *dummyHeader = new FruitNode();
-
-  cout << "Dummy Header: " << dummyHeader << endl;
-  cout << "Header's Fruit:  [" << dummyHeader->GetFruitName() << "]" << endl;
-
   string userFruitName;
 
   do {
-    cout << "Name a fruit (or 'DONE' if finished): ";
+    cout << endl << "Name a fruit (or 'DONE' if finished): ";
     cin >> userFruitName;
 
     if (userFruitName != "DONE") {
