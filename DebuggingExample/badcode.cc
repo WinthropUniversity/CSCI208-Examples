@@ -26,7 +26,7 @@ int main() {
   int reallycoolvariable;
   int n = 0;
   cout << "Compute Factorial for: ";
-  //cin >> n;
+  cin >> n;
   n = 6;
 
   long val = factorial(n);

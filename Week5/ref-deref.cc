@@ -26,8 +26,11 @@ int main() {
 
   // Don't overwrite mynumberptr or you'll lose track of *where* it was pointing to ...
   // If you want to assign a value to that spot, you'll have to REFERENCE the memory area
-  *mynumberptr = 8;
+  *mynumberptr = mynumber;
   cout << "The actual value stored at mynumberptr is: " << (*mynumberptr) << std::endl;
+
+  int *otherptr;
+  otherptr = &mynumber;
 
   // We asked for the memory; we better give it up when we're done.
   // So, tell the OS to deallocate it:

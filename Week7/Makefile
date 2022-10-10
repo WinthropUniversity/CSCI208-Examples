@@ -1,8 +1,8 @@
 ### --- Environmental Variables --- ###
 
 ## RPW:  Uncomment one of these, comment the others
-#PROGRAM=binarytree
-PROGRAM=sortedlist
+PROGRAM=binarytree
+#PROGRAM=sortedlist
 #PROGRAM=selectandsort
 
 # Compiler/Linker env vars
