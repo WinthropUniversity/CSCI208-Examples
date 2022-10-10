@@ -34,6 +34,10 @@ int main() {
     cout << "  " << current->GetFruitName() << endl;
     current = current->GetNextNode();
   }
+
+  delete dummyHeader;
+  dummyHeader = NULL;
+  
   // The program ran correctly
   return 0;
 }

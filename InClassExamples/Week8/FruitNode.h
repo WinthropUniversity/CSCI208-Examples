@@ -10,6 +10,7 @@ class FruitNode {
 public:
   FruitNode();
   FruitNode(string inName);
+  ~FruitNode();
 
   string GetFruitName() const;
   void SetFruitName(string inName);

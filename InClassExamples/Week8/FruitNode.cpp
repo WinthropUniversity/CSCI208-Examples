@@ -14,6 +14,15 @@ FruitNode::FruitNode(string inName) {
 }
 
 
+// Destructor
+FruitNode::~FruitNode() {
+  if ( GetNextNode() != NULL ) {
+    delete nextNode_;
+    nextNode_ = NULL;
+  }
+}
+
+
 // Accessor and Mutator Methods
 
 string FruitNode::GetFruitName() const {
