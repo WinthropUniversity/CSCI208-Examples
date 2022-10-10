@@ -2,15 +2,15 @@
 
 // Default Constructor
 FruitNode::FruitNode() {
-  this->fruitName_ = "";
-  this->nextNode = NULL;
+  fruitName_ = "";
+  nextNode_ = NULL;
 }
 
 
 // Initialization Constructor
 FruitNode::FruitNode(string inName) {
   fruitName_ = inName;
-  nextNode = NULL;    
+  nextNode_ = NULL;    
 }
 
 
