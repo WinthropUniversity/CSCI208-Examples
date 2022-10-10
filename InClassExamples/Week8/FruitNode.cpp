@@ -1,4 +1,5 @@
 #include "FruitNode.h"
+#include<iostream>
 
 // Default Constructor
 FruitNode::FruitNode() {
@@ -17,6 +18,7 @@ FruitNode::FruitNode(string inName) {
 // Destructor
 FruitNode::~FruitNode() {
   if ( GetNextNode() != NULL ) {
+    cout << "XX Deleting node: " << fruitName_ << endl;
     delete nextNode_;
     nextNode_ = NULL;
   }
