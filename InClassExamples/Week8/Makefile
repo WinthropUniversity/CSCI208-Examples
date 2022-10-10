@@ -2,7 +2,7 @@
 
 all: FruitList
 
-FruitList:  FruitList.o  FruitNode.h
+FruitList:  FruitList.o  FruitNode.o
 	g++ -o $@  $*
 
 FruitList.o:  FruitList.cpp FruitNode.h
