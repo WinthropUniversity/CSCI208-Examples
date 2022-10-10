@@ -2,7 +2,7 @@
 
 all: FruitList
 
-FruitList:  FruitList.o  FruitNode.
+FruitList:  FruitList.o  FruitNode.h
 	g++ -o $@  $*
 
 FruitList.o:  FruitList.cpp FruitNode.h
@@ -14,4 +14,3 @@ FruitNode.o:  FruitNode.cpp FruitNode.h
 clean:
 	rm -f *.o FruitList
 
-	
