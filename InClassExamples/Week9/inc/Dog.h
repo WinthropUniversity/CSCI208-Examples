@@ -2,12 +2,12 @@
 #define DOG_H__
 
 #include<string>
-#include "Pet.h"
+#include<Pet.h>
 
 class Dog : public Pet {
 public:
     Dog(string inName);
-    virtual string Speak();    
+    virtual string Speak() const;    
 };
 
 #endif

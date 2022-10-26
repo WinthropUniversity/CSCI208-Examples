@@ -3,6 +3,6 @@
 Snake::Snake(string inName) : Pet(inName) {
 }
 
-string Snake::Speak() {
+string Snake::Speak() const {
     return "Hiss";
 }

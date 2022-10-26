@@ -11,10 +11,10 @@ protected:
 
 public:
     Pet(string inName);
-    string GetName();
-    int GetNumberOfLegs();
-    virtual string Speak() = 0;   
-    double EstimatePi(); 
+    string GetName() const;
+    int GetNumberOfLegs() const;
+    virtual string Speak() const  = 0;   
+    double EstimatePi() const; 
 };
 
 #endif

@@ -1,23 +1,25 @@
+CFLAGS=-c -I./inc/
+
 .PHONY: all clean
 all: petexample
 
 petexample: main.o Pet.o Snake.o Dog.o Cat.o
 	g++ -o $@ *.o
 
-main.o: main.cc Pet.h
-	g++ -c $<
+main.o: main.cc inc/Pet.h
+	g++ $(CFLAGS) $<
 
-Pet.o:  Pet.cc Pet.h
-	g++ -c $<
+Pet.o:  Pet.cc inc/Pet.h
+	g++ $(CFLAGS) $<
 
-Dog.o:  Dog.cc Dog.h Pet.h
-	g++ -c $<
+Dog.o:  Dog.cc inc/Dog.h inc/Pet.h
+	g++ $(CFLAGS) $<
 
-Cat.o:  Cat.cc Cat.h Pet.h
-	g++ -c $<
+Cat.o:  Cat.cc inc/Cat.h inc/Pet.h
+	g++ $(CFLAGS) $<
 
-Snake.o:  Snake.cc Snake.h Pet.h
-	g++ -c $<
+Snake.o:  Snake.cc inc/Snake.h inc/Pet.h
+	g++ $(CFLAGS) $<
 
 clean:
 	rm -f *.o petexample
