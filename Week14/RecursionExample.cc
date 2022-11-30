@@ -130,6 +130,10 @@ vector<int> MergeSort(const vector<int> &unsortedlist, int begin, int end) {
     sortedlist = Merge( MergeSort(unsortedlist, begin, (begin+end)/2),
                         MergeSort(unsortedlist, 1+(begin+end)/2, end) );
 
+  cout << "MergeSorted Sublist: ";
+  for (int idx=0; idx<sortedlist.size(); idx++)
+    cout << sortedlist[idx] << " ";
+  cout << endl;
   return sortedlist;
 }
 
