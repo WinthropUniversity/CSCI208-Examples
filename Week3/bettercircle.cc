@@ -6,12 +6,12 @@
 #include<iostream>
 
 // Default Constructor
-Circle::Circle() : radius_(0.0) {}
+//Circle::Circle() : radius_(0.0) {}
 
 // The above code basically does the same as this would:
-//Circle::Circle() {
-//  radius_ = 0.0;
-//}
+Circle::Circle() {
+  radius_ = 0.0;
+}
 
 
 // Initialization constructor
