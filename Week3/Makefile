@@ -19,8 +19,11 @@ simple-class:	simple-class.cc
 circle.o:	circle.h circle.cc
 	$(CC) $(CFLAGS) -c circle.cc
 
-circle-main:	circle-main.cc circle.h circle.o
-	$(CC) $(CFLAGS) -o circle-main  circle-main.cc  circle.o
+circle-main.o: circle-main.cc circle.h
+	$(CC)  $(CFLAGS)  -c circle-main.cc
+
+circle-main:	circle-main.o circle.o
+	$(CC) $(CFLAGS) -o circle-main  circle-main.o  circle.o
 
 
 ## Third Example

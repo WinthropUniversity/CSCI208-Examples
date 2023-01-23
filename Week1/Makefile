@@ -14,3 +14,8 @@ main.o:  main.cc hello.h
 clean:
 	rm -f myprogram
 	rm -f *.o
+
+cleanwin:
+	del myprogram
+	del *.o
+
