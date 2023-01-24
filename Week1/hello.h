@@ -3,7 +3,6 @@
 
 #include<iostream>
 
-// Prototype my module's function here
 void printHello();
 
 #endif
