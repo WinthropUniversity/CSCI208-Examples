@@ -18,4 +18,3 @@ clean:
 cleanwin:
 	del myprogram
 	del *.o
-
