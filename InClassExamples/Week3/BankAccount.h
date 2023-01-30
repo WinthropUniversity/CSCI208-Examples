@@ -13,14 +13,16 @@ public:
   BankAccount(string inLastName, string inFirstName, string inMiddleName, double inBalance );
   BankAccount(string inLastName, string inFirstName, string inMiddleName);
 
-  double GetBalance() const;
   int Deposit(double inAmount);
   int Withdraw(double inAmount);
 
+  // Accessor Methods
+  double GetBalance() const;
   string GetFirstName();
   string GetLastName();
   string GetMiddleName();
 
+  // Mutator method for the name
   void SetAccountName(string inLastName, string inFirstName, string inMiddleName);
 
 private:

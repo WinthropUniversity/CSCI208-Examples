@@ -1,7 +1,7 @@
 #include<iostream>
 #include<string>
 
-#include "BankAccount.h"
+#include <BankAccount.h>
 
 int main() {
   string lastName;
@@ -21,10 +21,10 @@ int main() {
   cout << "Initial Balance: ";
   cin >> initialBalance;
 
+  // Declare a BankAccount variable (i.e., instantiating an objection)
   BankAccount myaccount(lastName, firstName, middleName, initialBalance);
 
   bool done=false;
-
   do {
     string action;
     double amount;

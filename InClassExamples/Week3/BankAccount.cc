@@ -1,4 +1,4 @@
-#include "BankAccount.h"
+#include <BankAccount.h>
 
 
 BankAccount::BankAccount() {
@@ -10,17 +10,13 @@ BankAccount::BankAccount() {
 
 BankAccount::BankAccount(string inLastName, string inFirstName, string inMiddleName, double inBalance ){
   balance_ = inBalance;
-  lastName_ = inLastName;
-  firstName_ = inFirstName;
-  middleName_ = inMiddleName;
+  SetAccountName(inLastName, inFirstName, inMiddleName);
 }
 
 
 BankAccount::BankAccount(string inLastName, string inFirstName, string inMiddleName) {
   balance_ = 0.0;
-  lastName_ = inLastName;
-  firstName_ = inFirstName;
-  middleName_ = inMiddleName;
+  SetAccountName(inLastName, inFirstName, inMiddleName);
 }
 
 
