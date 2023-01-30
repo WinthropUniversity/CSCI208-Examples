@@ -23,15 +23,35 @@ int main() {
 
   BankAccount myaccount(lastName, firstName, middleName, initialBalance);
 
-  string done="n";
+  bool done=false;
+
   do {
     string action;
-    cout << "Deposit(d), Withdraw(w), or Quit(q): "
+    double amount;
+
+    cout << "Deposit(d), Withdraw(w), or Quit(q): ";
     cin >> action;
-    switch (action) {
-        case "d"
+    if (action[0] == 'd') {
+      cout << "How much? ";
+      cin >> amount;
+      myaccount.Deposit(amount);
     }
-  } while (done != "y")
+    else if (action[0] == 'w') {
+      cout << "How much? ";
+      cin >> amount;
+      myaccount.Withdraw(amount);      
+    }
+    else if (action[0] == 'q') {
+      done = true;
+    }
+    else {
+      cerr << "I don't understand the command '" << action << "'." << endl;
+    }
+    cout << "Account: " << myaccount.GetLastName() 
+         << ", " << myaccount.GetFirstName() << " " 
+         << myaccount.GetMiddleName() << endl;
+    cout << "Balance: " << myaccount.GetBalance() << endl << endl;
+  } while (!done);
 
   return 0; // Yay!  It worked!
 }
