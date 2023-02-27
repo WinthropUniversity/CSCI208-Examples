@@ -23,8 +23,8 @@ int main() {
     // Print the list:
     cout << "List: ";
     currNodePtr = headNodePtr->GetNext();
-    while (currNodePtr == nullptr) {
-        cout << currNodePtr->GetNumber();
+    while (currNodePtr != nullptr) {
+        cout << currNodePtr->GetNumber() << " ";
         currNodePtr = currNodePtr->GetNext();
     }
     cout << endl;
