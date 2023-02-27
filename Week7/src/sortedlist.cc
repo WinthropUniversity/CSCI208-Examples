@@ -64,7 +64,7 @@ bool SortedList::DeleteData(string key) {
     if (currentNode->GetKey() == key) {
       // Short circuit around the current node
       if (currentNode->GetNextListNode() == NULL)
-	previousNode->SetAsTerminalListNode();
+	      previousNode->SetAsTerminalListNode();
       else
         previousNode->PointToListNode(currentNode->GetNextListNode());
 

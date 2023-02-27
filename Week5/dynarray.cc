@@ -33,7 +33,7 @@ int main() {
     cout << "  " << numberlist[idx] << endl;
 
   // Show the hard way to reference items in the array ...
-  if (listsize > 2)
+  if (listsize > 2)                // numberlist[1]
     cout << "Second item was: " << *(numberlist + 1) << endl;
 
   // Now you had better deallocate the list ...
