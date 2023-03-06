@@ -14,13 +14,13 @@ class Circle : public Shape  {
 public:
   Circle(double inRadius);
 
-  double GetArea() const;
-  double GetPerimeter() const;
+  virtual double GetArea() const;
+  virtual double GetPerimeter() const;
 
 protected:
   double radius_;
 
-  void PrintParamLine() const;
+  virtual void PrintParamLine() const;
 };
 
 #endif

@@ -14,14 +14,14 @@ class Triangle : public Shape  {
 public:
   Triangle(double inbase, double inHeight);
 
-  double GetArea() const;
-  double GetPerimeter() const;
+  virtual double GetArea() const;
+  virtual double GetPerimeter() const;
 
 protected:
   double base_;
   double height_;
 
-  void PrintParamLine() const;
+  virtual void PrintParamLine() const;
 };
 
 #endif
