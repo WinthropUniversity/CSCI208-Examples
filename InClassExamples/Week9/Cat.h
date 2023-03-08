@@ -8,6 +8,7 @@ public:
     Cat(string inName, int inAge);
     virtual string Vocalize() const;
     virtual string GetOtherString() const;
+//    string GetOtherString() const;
 };
 
 #endif

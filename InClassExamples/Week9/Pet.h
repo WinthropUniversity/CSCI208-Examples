@@ -17,6 +17,7 @@ public:
 
   virtual string Vocalize() const = 0;
   virtual string GetOtherString() const;
+  //string GetOtherString() const;
   
 protected:
   string name_;

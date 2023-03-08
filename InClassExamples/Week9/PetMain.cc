@@ -26,6 +26,8 @@ int main() {
     PrintPetInfo(c);
     PrintPetInfo(d);
 
+    cout << endl << endl << a.GetOtherString() << endl;
+
 //    a.IncrementAge();
 //    PrintPetInfo(a);
 
