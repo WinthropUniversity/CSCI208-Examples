@@ -7,6 +7,7 @@ class Cat : public Pet {
 public:
     Cat(string inName, int inAge);
     virtual string Vocalize() const;
+    virtual string GetOtherString() const;
 };
 
 #endif

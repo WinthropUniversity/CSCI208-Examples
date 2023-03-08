@@ -11,6 +11,7 @@ void PrintPetInfo( const Pet &myPet ) {
          << myPet.GetAge()  << " :: "
          << myPet.Vocalize() 
          << " :: has " << myPet.GetLegCount() << " legs." 
+         << "   -->  " << myPet.GetOtherString()
          << endl;    
 }
 

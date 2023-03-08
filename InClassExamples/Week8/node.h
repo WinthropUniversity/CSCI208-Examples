@@ -11,7 +11,7 @@ public:
   Node(double inNumber);
 
   double GetNumber();
-  Node *GetNext();
+  Node* GetNext();
 
   void InsertAtFront(Node *inDummyHeadPtr, Node *newFirstNodePtr);
 

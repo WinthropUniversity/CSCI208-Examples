@@ -6,3 +6,6 @@ string Cat::Vocalize() const {
     return "Meow";
 }
 
+string Cat::GetOtherString() const {
+    return "Other this cat-specific string ...";
+}

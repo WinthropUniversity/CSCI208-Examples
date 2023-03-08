@@ -19,3 +19,7 @@ int Pet::GetLegCount() const {
 void Pet::IncrementAge() {
     age_++;
 }
+
+string Pet::GetOtherString() const {
+    return "This is another string.";
+}
