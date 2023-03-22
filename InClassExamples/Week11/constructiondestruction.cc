@@ -52,12 +52,18 @@ void User::Print() const {
 class SuperUser : public User {
 public:
    SuperUser();
+   SuperUser(int inNumDays);
    ~SuperUser();
    virtual void Print() const;
+   void Silly() const;
 };
 
 
 SuperUser::SuperUser() : User("Root", "Root", "root", 0) {
+    cout << "Constructing an object of typer SuperUser (default)" << endl;
+}
+
+SuperUser::SuperUser(int inNumDays) : User("Root", "Root", "root", inNumDays) {
     cout << "Constructing an object of typer SuperUser (default)" << endl;
 }
 
@@ -70,7 +76,18 @@ void SuperUser::Print() const {
     User::Print();
 }
 
+void SuperUser::Silly() const {
+    cout << "Yay!!!" << endl;
+}
 
+class OtherClass {
+public:
+   void Print() const;
+};
+
+void OtherClass::Print() const {
+    cout << "Meaningless printing ..." << endl;
+}
 
 
 int main() {
@@ -78,7 +95,7 @@ int main() {
     //User x;
     //User y("Wiegand", "Paul", "wiegandrp", 0);
     //User z("Tran", "Nick", "trann2", 10);
-    User *bob = new SuperUser();
+    User *bob = new SuperUser(); //(13);
     cout << "<--After I declared my objects" << endl;   
 
     //x.Print();
@@ -86,6 +103,7 @@ int main() {
     //z.Print();
     //(*bob).Print();
     bob->Print();
+    //bob->Silly();  // This wont work
 
     cout << "===I'm done with my code in the main function now." << endl;
 
