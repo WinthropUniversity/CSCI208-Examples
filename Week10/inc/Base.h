@@ -8,6 +8,7 @@ using namespace std;
 
 class Base {
 public:
+  Base();
   Base(string inFancyName);
   ~Base();
 
