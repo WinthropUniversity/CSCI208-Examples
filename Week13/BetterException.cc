@@ -12,7 +12,7 @@ class SeriesDivergesException: public exception
 {
   virtual const char* what() const throw()
   {
-    return "A series diverged.";
+    return "The geometric series diverges.  The sum will exceed what we can represent.  Use a different 'a' value.";
   }
 } divergeExp;
 

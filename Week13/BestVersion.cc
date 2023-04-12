@@ -11,7 +11,7 @@ class SeriesDivergesException: public exception {
 public:
   virtual const char* what() const throw()
   {
-    return "ERROR:  A series diverged.";
+    return "ERROR: The geometric series diverges.  The sum will exceed what we can represent.  Use a different 'a' value.";
   }
 };
 
@@ -21,7 +21,7 @@ class InvalidUserInput: public exception {
 public:
   virtual const char* what() const throw()
   {
-    return "ERROR:  Not a valid user input option.";
+    return "ERROR:  Not a valid user input option.  Please enter a number.";
   }
 };
 
@@ -72,13 +72,13 @@ double ComputeSeries(double a) throw(SeriesDivergesException) {
 
 
 int main() {
-  double a= 2.0;
-  
   // Get the values, compute the series
   try {
+    double a= 2.0;
     a = GetDenominator();
     cout << "  a=" << a << endl;
-    cout << "  Series value: " << ComputeSeries(a) << endl;
+    double seriesTotal = ComputeSeries(a);
+    cout << "  Series value: " << seriesTotal << endl;
   }
   catch (InvalidUserInput &e1) {
     cerr << e1.what() << endl;
@@ -90,13 +90,13 @@ int main() {
   // Yay!  We're done.
   cout << "Completed the work!" << endl;
 
-  try {
+  /*try {
     cout << endl << "Running SuperGreatFunction() now..." << endl;
     SuperGreatFunction();
     cout << "Wow, that was an awesome function!" << endl;
   } catch (string &e) {
     cout << "  ERROR:  Oh no!!  Our SuperGreatFunction() failed!" << endl;
-  }
+  }*/
 
   cout << "Everything is okay.  Stopping my program now." << endl;
 
