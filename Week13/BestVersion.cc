@@ -90,6 +90,15 @@ int main() {
   // Yay!  We're done.
   cout << "Completed the work!" << endl;
 
+  // Don't do this:
+  /*try {
+    cout << "Cool line" << endl;
+    throw 2;
+  }
+  catch (int &e) {
+    cerr << "Oh no!  An error!  Not 2!  It's the only even prime!  Ahhhhh!" << endl;
+  }*/
+
   /*try {
     cout << endl << "Running SuperGreatFunction() now..." << endl;
     SuperGreatFunction();
