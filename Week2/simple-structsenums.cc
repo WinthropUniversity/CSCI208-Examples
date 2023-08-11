@@ -71,9 +71,9 @@ void printDay(Date myDate) {
 // The main of the program
 int main() {
   char keepGoing;
-  ulong x = 8446744073709551000;
+  ulong bignum = 8446744073709551000;
 
-  std::cout << "This is a big number: " << x << std::endl;
+  std::cout << "This is a big number: " << bignum << std::endl;
 
   do {
     std::cout << "I'm going to ask you about somes days of your life." << std::endl;
