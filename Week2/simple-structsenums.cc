@@ -3,8 +3,14 @@
 
 #include<iostream>
 
+
+// Make a new type called ulong that is an unsigned long integer
+typedef unsigned long int ulong;
+
+
 // Enum type definition for DayQuality
 enum DayQuality {DQ_GOOD, DQ_MEH, DQ_BAD};
+
 
 // Structure type definition for Date
 struct Date {
@@ -65,6 +71,9 @@ void printDay(Date myDate) {
 // The main of the program
 int main() {
   char keepGoing;
+  ulong x = 8446744073709551000;
+
+  std::cout << "This is a big number: " << x << std::endl;
 
   do {
     std::cout << "I'm going to ask you about somes days of your life." << std::endl;
