@@ -9,6 +9,14 @@ simple-structsenums: simple-structsenums.o
 simple-structsenums.o: simple-structsenums.cc
 	g++ -c simple-structsenums.cc
 
+
+file-streams.exe: file-streams.o
+	g++ -o file-streams.exe  file-streams.o
+	
+# Compile the source file for file-styreams to an object file
+file-streams.o: file-streams.cc
+	g++ -c file-streams.cc
+
 # Remove any unnecessary temporary files resulting from builds
 clean:
 	rm -f *.o
