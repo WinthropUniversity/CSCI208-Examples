@@ -1,9 +1,0 @@
-There are nine numeric values in this file
-The average is a little over ninety-one point six
-98.7
-86.8   Bad Day:  78.2
-95.12
-90
-100
-92.6
-93.1   Man, almost: 89.9
