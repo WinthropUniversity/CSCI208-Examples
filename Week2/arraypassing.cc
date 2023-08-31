@@ -86,8 +86,8 @@ double mean(double array[], int size) {
 }
 
 
-void sillyByValueTest(int x) {
-  x = 0;
+void sillyByValueTest(int y) {
+  y = 0;
 }
 
 
