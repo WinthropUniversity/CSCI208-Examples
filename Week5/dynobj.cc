@@ -50,6 +50,9 @@ int main() {
 
   cout << endl;
 
+  delete cuberptr;
+  cuberptr = nullptr;
+
   // Everything ran okey-dokey, so tell the OS we're good
   return 0;
 }
