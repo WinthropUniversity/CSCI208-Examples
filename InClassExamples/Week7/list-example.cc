@@ -31,6 +31,7 @@ int main() {
 
     // Build am empty node
     TriangleNode *headPtr = new TriangleNode();
+    TriangleNode *lastPtr = headPtr;
 
     cout << "headPtr's address is:    " << headPtr << endl;
     cout << "headPtr triangle base:   " << headPtr->GetBase() << endl;
@@ -39,17 +40,26 @@ int main() {
 
     string done="no";
     do {
+        // Go ask the user for a new triangle ...
         TriangleNode *newTriangle = promptUserForTriangle();
-        headPtr->InsertAfter(newTriangle);
+         
+        // To insert at the front, do this:
+        //headPtr->InsertAfter(newTriangle);
 
+        // Or, instead, to insert at the end, do this:
+        lastPtr->InsertAfter(newTriangle);
+        lastPtr = newTriangle;
+
+        // Check if the user wants to keep going or not
         cout << "Are you done? ";
         cin >> done;
     } while (done != "yes");
 
+    // Print that list!!
     cout << endl << "Here's your triangles!" << endl;
     cout << "The header ptr is:  " << headPtr << endl;
     cout << "The head's next is: " << headPtr->GetNext() << endl;
-    
+
     // Traverse the linked list
     // Have some data variable holding the start
     TriangleNode *currentPtr = headPtr->GetNext();
