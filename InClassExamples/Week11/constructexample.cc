@@ -55,8 +55,12 @@ int main() {
     cout << "The name stored in x is: " << x->GetName() << endl;
     cout << "The name stored in y is: " << y.GetName() << endl;
 
+    cout << "Deallocating the sapce at x ..." << endl;
     delete x;
-    
+    cout << "Setting to null ..." << endl;
+    x = nullptr;
+    cout << "Okay, I did it ..." << endl;
+
     // Everything is okay
     return 0;
 }// y got destroyed
