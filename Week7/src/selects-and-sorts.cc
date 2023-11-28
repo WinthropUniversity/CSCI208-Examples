@@ -32,6 +32,9 @@ void PrintList(vector<int> &numberList) {
   cout << endl << "List: ";
   for (vector<int>::iterator item=numberList.begin(); item!=numberList.end(); ++item)
     cout << (*item) << "  ";
+  // RPW:  This is equivalent to the two lines above
+  //for (int idx=0; idx<numberList.size(); idx++)
+  //  cout << numberList[idx] << "  ";
   cout << endl << endl;
 }
 

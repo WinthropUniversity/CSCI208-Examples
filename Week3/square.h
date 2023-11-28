@@ -10,7 +10,7 @@ public:
   Square(double inLength);
 
   void SetLength(double inLength);
-  double GetLength(double inLength) const;
+  double GetLength() const;
 
   double GetPerimeter() const;
 };

@@ -18,7 +18,7 @@ void Square::SetLength(double inLength) {
 }
 
 
-double Square::GetLength(double inLength) const {
+double Square::GetLength() const {
   return length_;
 }
 

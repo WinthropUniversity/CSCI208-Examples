@@ -33,5 +33,5 @@ double Circle::GetArea() const {
  *  @return The perimeter as a double
  **/
 double Circle::GetPerimeter() const {
-  return 2.0* radius_ * PI;
+  return 2.0 * radius_ * PI;
 }

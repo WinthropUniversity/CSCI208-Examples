@@ -10,20 +10,20 @@ void SimpleFunction() {
   cout << "  I now have an object instance of the derived class!" << endl;
   cout << "    FancyName:   " << myderivedobject.GetFancyName() << endl;
   cout << "    GreatNumber: " << myderivedobject.GetGreatNumber() << endl;
-}
+}// myderivedobject got implicitly destroyed as it left scope
 
 
 
 void AlternateFunction() {
   Derived *myderivedobject;  // Referemce (ptr) to instance
   cout  << "RPW:  I created the pointer" << endl;
-  myderivedobject = new Derived("Flibberty-Dee", 42);
+  myderivedobject = new Derived("Flibberty-Dee", 42);  // Construction
 
   cout << "  I now have an object instance of the derived class!" << endl;
   cout << "    FancyName:   " << myderivedobject->GetFancyName() << endl;
   cout << "    GreatNumber: " << myderivedobject->GetGreatNumber() << endl;
 
-  delete myderivedobject;
+  delete myderivedobject;  // Destruction
 
   cout << "RPW:  Now the object was explicitly destroyed" << endl;
 }
@@ -32,7 +32,7 @@ void AlternateFunction() {
 //#ifdef FOOBARBAZ
 
 int main() {
-  cout << endl <<"Calling SimpleFunction() ..." << endl << endl;
+  cout << endl << "Calling SimpleFunction() ..." << endl << endl;
   SimpleFunction();
   cout << endl << "Returned from SimpleFunction ..." << endl << endl;
 
@@ -42,9 +42,9 @@ int main() {
   AlternateFunction();
   cout << endl << "Returned from AlternateFunction ..." << endl << endl;
 
-  Complex x(1.2, -3.0);
-  Complex y(-0.5, 2.2);
-  cout << "Here's my complex number: " << x+y << endl;
+  //Complex x(1.2, -3.0);
+  //Complex y(-0.5, 2.2);
+  //cout << "Here's my complex number: " << x+y << endl;
 
   exit(0);
 }

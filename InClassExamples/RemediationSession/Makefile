@@ -2,6 +2,8 @@ CC=g++
 CFLAGS=-I. -c
 LDFLAGS=
 
+.PHONY: all clean
+
 all: StringListTester.exe
 
 StringListTester.exe: StringListTester.o StringList.o

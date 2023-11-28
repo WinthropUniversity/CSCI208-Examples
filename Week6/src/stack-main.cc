@@ -43,6 +43,6 @@ int main() {
   cout << endl;
       
   // Everything is okay
-  return 1;
+  return 0;
 }
   

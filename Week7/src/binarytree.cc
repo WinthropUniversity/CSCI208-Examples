@@ -52,7 +52,7 @@ string BinaryTree::FindData(string inKey) {
     bool found = false;
     TreeNode *current = topNode_;
     while (!found && (current != NULL)) {
-      if (current->GetKey() == inKey) {
+      if (current->GetKey() == inKey) { // Is it this node?
         returnData = current->GetData();
         found = true;
       }
@@ -109,11 +109,18 @@ int main() {
   BinaryTree tree;
 
   cout << "Loading the list ..." << endl;
+  tree.InsertData("Dark", "This should be the fourth item");
+  tree.InsertData("Arty", "This should be the first item");
+  tree.InsertData("Edge", "This should be the fifth item");
+  tree.InsertData("Cafe", "This should be the third item");
   tree.InsertData("Bold", "This should be the second item");
+
+/*  tree.InsertData("Bold", "This should be the second item");
   tree.InsertData("Dark", "This should be the fourth item");
   tree.InsertData("Arty", "This should be the first item");
   tree.InsertData("Cafe", "This should be the third item");
-  tree.InsertData("Edge", "This should be the fifth item");
+  tree.InsertData("Edge", "This should be the fifth item");*/
+
   tree.PrintInOrder("");
 
   cout << endl;

@@ -11,6 +11,7 @@ using namespace std;
  * Return the n! using recursion.
  **/
 int factorial(int n) {
+  cout << "   DBG:  Factorial frame where n=" << n << endl;
   if (n == 1) return 1;
   else        return n * factorial(n-1);
 }
@@ -36,6 +37,8 @@ int factorialNR(int n) {
  * using recursion.
  **/
 int fibonacci(int n) {
+  cout << "   DBG:  Fibonacci frame where n=" << n << endl;
+
   if (n <= 1) return 1;
   else return (fibonacci(n-1) + fibonacci(n-2));
 }
@@ -130,10 +133,13 @@ vector<int> MergeSort(const vector<int> &unsortedlist, int begin, int end) {
     sortedlist = Merge( MergeSort(unsortedlist, begin, (begin+end)/2),
                         MergeSort(unsortedlist, 1+(begin+end)/2, end) );
 
+  // We're just printing this so you can see each frame of the
+  // recursive calls
   cout << "MergeSorted Sublist: ";
   for (int idx=0; idx<sortedlist.size(); idx++)
     cout << sortedlist[idx] << " ";
   cout << endl;
+  
   return sortedlist;
 }
 

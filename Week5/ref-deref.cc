@@ -22,7 +22,8 @@ int main() {
   // the OS we want to allocate space to store that data
   mynumberptr = new int;  // As for a valid address for space allocated for an integer
 
-  cout << "The mynumberptr variable stores an ADDRESS pointing to a memory location where an integer is stored: " << mynumberptr << std::endl;
+  cout << "The mynumberptr variable stores an ADDRESS pointing to a memory location where an integer is stored: " 
+       << mynumberptr << std::endl;
 
   // Don't overwrite mynumberptr or you'll lose track of *where* it was pointing to ...
   // If you want to assign a value to that spot, you'll have to REFERENCE the memory area
