@@ -32,8 +32,8 @@ int foreverFunction(int total) {
 
 
 int main() {
-    //myRecursiveFunction("#", 3);
-    cout << "Forever function returned: " << foreverFunction(10) << endl;
+    myRecursiveFunction("#", 3);
+    //cout << "Forever function returned: " << foreverFunction(10) << endl;
 
     // This program rocks!
     return 0;
