@@ -1,5 +1,5 @@
 # The target that Make will start at
-all: simple-structsenums
+all: simple-structsenums file-streams.exe arraypassing.exe paulssillytarget
 
 # Link the object file to produce an executable
 simple-structsenums: simple-structsenums.o
@@ -17,12 +17,19 @@ file-streams.exe: file-streams.o
 file-streams.o: file-streams.cc
 	g++ -c file-streams.cc
 
+arraypassing.exe:  arraypassing.cc
+	g++ -o arraypassing.exe  arraypassing.cc
+
+paulssillytarget:
+	@echo "This was fun!!"
+
 # Remove any unnecessary temporary files resulting from builds
 clean:
 	rm -f *.o
-	rm -f simple-structsenums
+	rm -f simple-structsenums *.exe
 
 # The windows version of the above
 cleanwin:
 	del *.o
 	del simple-structsenums
+	del *.exe
