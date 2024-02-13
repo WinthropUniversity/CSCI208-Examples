@@ -7,13 +7,13 @@ long factorial(int n);
    
 
 void otherfunction() {
-  cout << "Inside another function" << endl;
+  cout << "Inside another function!!" << endl;
 }
 
 long factorial(int n) {
   long result = 1;
-
-  otherfunction();
+  
+  otherFunction();
   
   while (n--)
     result *= n;
