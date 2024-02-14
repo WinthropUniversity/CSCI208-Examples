@@ -1,9 +1,9 @@
 #Example Makefile
 
-all:	myprogram
+all:	myprogram.exe
 
-myprogram: hello.o main.o
-	g++ -o myprogram  hello.o main.o
+myprogram.exe: hello.o main.o
+	g++ -o myprogram.exe  hello.o main.o
 
 hello.o:  hello.cc hello.h
 	g++ -c hello.cc
@@ -12,9 +12,9 @@ main.o:  main.cc hello.h
 	g++ -c main.cc
 
 clean:
-	rm -f myprogram
+	rm -f myprogram.exe
 	rm -f *.o
 
 cleanwin:
-	del myprogram
+	del myprogram.exe
 	del *.o

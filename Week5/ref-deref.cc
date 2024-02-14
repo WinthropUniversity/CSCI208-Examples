@@ -33,6 +33,10 @@ int main() {
   int *otherptr;
   otherptr = &mynumber;
 
+  *otherptr = 7;
+
+  cout << "Now what is mynumber? " << mynumber << endl;
+  
   // We asked for the memory; we better give it up when we're done.
   // So, tell the OS to deallocate it:
   delete mynumberptr;

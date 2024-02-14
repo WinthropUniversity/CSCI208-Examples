@@ -37,6 +37,12 @@ int main() {
     // Display our stack
     else if (input == "showours")
       ourstack.PrintStack();
+
+    else if (input == "clear") {
+      ourstack.Clear();
+      while (!stlstack.empty()) stlstack.pop();
+    }
+
       
   } while (input != "quit");
 

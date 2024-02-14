@@ -6,7 +6,10 @@
  * never change ... maybe it's okay if the data does.
  *  @param inData  The data string to use for this node to store
  **/
-Node::Node(string inData, Node *inNext) : data_(inData), next_(inNext) {}
+Node::Node(string inData, Node *inNext)  {
+  data_ = inData;
+  next_ = inNext;
+}
 
 
 /** 
@@ -23,7 +26,7 @@ Node *Node::GetNextNode() const {
  *  @return A boolean indicating whether this is the next node or not.
  **/
 bool Node::IsTerminalNode() const {
-  return ( next_ == NULL );
+  return ( next_ == nullptr );
 }
 
 

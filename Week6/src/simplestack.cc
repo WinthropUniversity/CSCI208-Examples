@@ -8,7 +8,9 @@
  * to the first node ... when empty, it points
  * to NULL.
  **/
-SimpleStack::SimpleStack() : front_(NULL) {}
+SimpleStack::SimpleStack()  {
+  front_ = nullptr;
+}
 
 
 /**
@@ -16,7 +18,7 @@ SimpleStack::SimpleStack() : front_(NULL) {}
  * stack is replicated, contents and all;
  **/
 SimpleStack::SimpleStack(const SimpleStack &sourceStack) {
-  this->front_ = NULL;
+  this->front_ = nullptr;
 
   std::cout << "----- In the copy constructor!!! -----" << std::cout << std::endl;
 
@@ -25,7 +27,7 @@ SimpleStack::SimpleStack(const SimpleStack &sourceStack) {
 
   // Spin through the source stack, and push data into
   // *this* stack from the source stack nodes.
-  while (current != NULL) {
+  while (current != nullptr) {
     current->GetData();
     this->Push(current->GetData());
     current = current->GetNextNode();
@@ -68,7 +70,7 @@ string SimpleStack::Pop() {
  *  @return Boolean indicating the stack is empty.
  **/
 bool SimpleStack::IsEmpty() const {
-  return (front_ == NULL);
+  return (front_ == nullptr);
 }
 
 
@@ -92,7 +94,7 @@ void SimpleStack::PrintStack() const {
 
   // Traverse the stack in order until you reach the NULL pointer,
   // printing the data each time.
-  while (current != NULL) {
+  while (current != nullptr) {
     cout << "  " << current->GetData() << endl;
     current = current->GetNextNode();
   }
