@@ -2,7 +2,7 @@
 
 Node::Node() {
     interestingConstant_ = 0.0;
-    nameOfConstant_ = "Zero";
+    nameOfConstant_ = "DUMMY";
     nextPtr_ = nullptr;
 }
 
@@ -35,4 +35,14 @@ void Node::SetConstant(string inName, double inValue) {
 
 void Node::SetNextPtr(Node* inPtr) {
     nextPtr_ = inPtr;
+}
+
+
+// Other Methods
+
+void Node::Print() const {
+    cout << nameOfConstant_ << " : " 
+         << interestingConstant_ << "  [ "
+         << this << " ==> " << nextPtr_ << " ]"
+         << endl;
 }

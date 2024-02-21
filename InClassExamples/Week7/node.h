@@ -18,6 +18,8 @@ public:
     void SetConstant(string inName, double inValue);
     void SetNextPtr(Node* inPtr);
 
+    void Print() const;
+    
 private:
     double interestingConstant_;
     string nameOfConstant_;
