@@ -4,8 +4,10 @@
 * The constructor for the binary tree initializes the top
 * pointer of the tree to NULL.
 **/
-BinaryTree::BinaryTree() : topNode_(NULL) {}
-
+//BinaryTree::BinaryTree() : topNode_(NULL) {}
+BinaryTree::BinaryTree() {
+  topNode_ = nullptr;
+}
 
 /**
 * Create a node to store the key and data, then put
@@ -109,17 +111,17 @@ int main() {
   BinaryTree tree;
 
   cout << "Loading the list ..." << endl;
-  tree.InsertData("Dark", "This should be the fourth item");
+  /*tree.InsertData("Dark", "This should be the fourth item");
   tree.InsertData("Arty", "This should be the first item");
   tree.InsertData("Edge", "This should be the fifth item");
   tree.InsertData("Cafe", "This should be the third item");
-  tree.InsertData("Bold", "This should be the second item");
+  tree.InsertData("Bold", "This should be the second item");*/
 
-/*  tree.InsertData("Bold", "This should be the second item");
+  tree.InsertData("Bold", "This should be the second item");
   tree.InsertData("Dark", "This should be the fourth item");
   tree.InsertData("Arty", "This should be the first item");
   tree.InsertData("Cafe", "This should be the third item");
-  tree.InsertData("Edge", "This should be the fifth item");*/
+  tree.InsertData("Edge", "This should be the fifth item");
 
   tree.PrintInOrder("");
 

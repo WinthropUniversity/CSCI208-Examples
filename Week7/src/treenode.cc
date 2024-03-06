@@ -6,7 +6,13 @@
  *  @param inKey The incoming key
  *  @param inData The incoming data
  **/
-TreeNode::TreeNode(string inKey, string inData) : key_(inKey), data_(inData), left_(NULL), right_(NULL) {}
+//TreeNode::TreeNode(string inKey, string inData) : key_(inKey), data_(inData), left_(NULL), right_(NULL) {}
+TreeNode::TreeNode(string inKey, string inData) {
+  key_ = inKey;
+  data_ = inData;
+  left_ = nullptr;
+  right_ = nullptr;
+}
 
 
 /**

@@ -1,13 +1,14 @@
 #include<Triangle.h>
 #include<cmath>
 
-#define PI 3.141592653589
 
 /**
  * Constructor for the Triangle shape.
  *  @param inRadius The radius with which to set the shape
  **/
-Triangle::Triangle(double inBase, double inHeight) : base_(inBase), height_(inHeight) {
+Triangle::Triangle(double inBase, double inHeight)  {
+  base_ = inBase;
+  height_ = inHeight;
   shapeName_ = "Triangle";
 }
 

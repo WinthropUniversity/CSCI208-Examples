@@ -1,12 +1,12 @@
 #include<Square.h>
 
-#define PI 3.141592653589
 
 /**
  * Constructor for the Square shape.
  *  @param inRadius The radius with which to set the shape
  **/
-Square::Square(double length) : length_(length) {
+Square::Square(double length)  {
+  length_ = length;
   shapeName_ = "Square";
 }
 

@@ -35,6 +35,8 @@ void PrintList(vector<int> &numberList) {
   // RPW:  This is equivalent to the two lines above
   //for (int idx=0; idx<numberList.size(); idx++)
   //  cout << numberList[idx] << "  ";
+  //for (auto item)
+  //  cout << item << endl;
   cout << endl << endl;
 }
 
@@ -135,7 +137,7 @@ int main() {
   cout << endl;
   cout << "How big a list do you want? ";
   cin >> listSize;
-  PopulateList(numberList, listSize, 10000);
+  PopulateList(numberList, listSize, 100000);
   SelectionSort(numberList);
 
   PrintList(numberList);
