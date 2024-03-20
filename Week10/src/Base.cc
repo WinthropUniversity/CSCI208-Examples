@@ -4,8 +4,7 @@
 Base::Base() : fancyName_("NONAME") {}
 
 // Initialization Constructor
-Base::Base(string inFancyName) :
-  fancyName_(inFancyName) {
+Base::Base(string inFancyName) : fancyName_(inFancyName) {
   cout << "NOTICE:  Initializing constructor of **Base** class called. " << endl;
 }
 
