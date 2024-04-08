@@ -34,7 +34,7 @@ void SuperGreatFunction() {
 
 
 // Get the denominator from the user.
-double GetDenominator() throw(InvalidUserInput) {
+double GetDenominator()  {
   double a = 2.0;
   
   cout << "Series: 1 + 1/a + 1/a^2 + ..." << endl;
@@ -55,7 +55,7 @@ double GetDenominator() throw(InvalidUserInput) {
 
 
 // Compute a series 1 + (1/a) + (1/a^2) + ...
-double ComputeSeries(double a) throw(SeriesDivergesException) {
+double ComputeSeries(double a) {
   // Pre-test to make sure it is positive
   if (a < 0.0) a = -a;
   
