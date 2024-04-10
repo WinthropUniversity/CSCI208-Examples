@@ -1,8 +1,17 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <exception>
 
 using namespace std;
+
+class ValueNotFoundException : public exception {
+public:
+  virtual const char* what() const throw() {
+    return "Could not find the value requested";
+  }
+};
+
 
 int FindValue(const vector<int> &searchlist, int valueToFind) {
     int foundIndex = -1; // Implicit error signal
@@ -14,8 +23,9 @@ int FindValue(const vector<int> &searchlist, int valueToFind) {
     }
 
     // RPW:  One way to "signal" an error
-    string errorMessage = "Could not find value";
-    throw errorMessage;
+    //string error = "Could not find value";
+    ValueNotFoundException error;
+    throw error;
 
     // RPW:  Another way is to just return a -1 to signal there is an error
     return foundIndex;
@@ -43,7 +53,8 @@ int main(int argc, char *argv[]) {
           int idx = FindValue(list, x);
           cout << "Value " << x << " at index " << idx << endl;
         }
-        catch (string &e) {
+        //catch (string &e) {
+        catch (ValueNotFoundException &e) {
             cerr << "Could not find " << x << " in list!" << endl;
         }
 
