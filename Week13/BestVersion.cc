@@ -49,6 +49,7 @@ double GetDenominator()  {
 
   // A posttest to make sure it is positive
   if (a < 0.0) a = -a;
+  else if (a == 0) throw 0.0;
   
   return a;
 }
@@ -85,6 +86,9 @@ int main() {
   }
   catch (SeriesDivergesException &e2) {
     cerr << e2.what() << endl;
+  }
+  catch (double &e3) {
+    cerr << "The user entered " << e3 << endl;
   }
 
   // Yay!  We're done.

@@ -5,7 +5,7 @@ using namespace std;
 
 int nonsensefunction2() {
     string x ="howdy doody";
-    //throw x;
+    throw x;
     //throw 3.1415;
     cout << "  About to leave nonsensefunction2()" << endl;
     return 6;
