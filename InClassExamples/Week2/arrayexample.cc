@@ -43,6 +43,7 @@ int main() {
 
     int fibNum = getFibSequenceCount();
     populateFibonacciSequence(fibSequence, fibNum);
+    std::cout << std::endl << "The Fibonacci sequence is: " << std::endl;
     printNumberArray(fibSequence, fibNum);
 
     // Everything is okay
