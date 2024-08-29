@@ -78,7 +78,7 @@ double mean(double array[], int size) {
   double total = 0.0;
 
   // Sum up all the values in the array
-  for (int idx=0; idx<size; idx++)
+  for (int idx=0; idx<size; idx++) 
     total += array[idx];
 
   // Return the total / size
