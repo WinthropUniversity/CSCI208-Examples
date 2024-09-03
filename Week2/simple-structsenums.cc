@@ -2,7 +2,7 @@
 // R. Paul Wiegand
 
 #include<iostream>
-
+#include<string>
 
 // Make a new type called ulong that is an unsigned long integer
 typedef unsigned long int ulong;
@@ -19,6 +19,17 @@ struct Date {
   int year;
   DayQuality quality;
 };  // <--- Don't forget the semicolon!
+
+
+enum Color {C_RED, C_ORANGE, C_YELLOW, C_GREEN, C_BLUE, C_INDIGO, C_VIOLET};
+
+
+struct Student {
+  std::string name;
+  int age;
+  std::string major;
+  Color favoriteColor;
+};
 
 
 /**
@@ -87,8 +98,30 @@ int main() {
   std::cout << "What is 'false'?  " << (int)false << std::endl;
   std::cout << "What is 'true'?   " << (int)true << std::endl;
 
-  int x = 9;
-  if (2 == x) std::cout << "42 is true!" << std::endl;
+  int y = 9;
+  if (2 == y) std::cout << "42 is true!" << std::endl;
+
+  Student x;
+
+  x.name = "Paul Wiegand";
+  x.age = 53;
+  x.major = "Computer Science";
+  x.favoriteColor = C_GREEN;
+
+  std::cout << "Student: " << x.name << " (" << x.age << ") -- " << x.major << ".  ";
+  std::string color;
+  switch (x.favoriteColor) {
+    case C_RED    : color = "red"; break;
+    case C_ORANGE : color = "orange"; break;
+    case C_YELLOW : color = "yellow"; break;
+    case C_GREEN  : color = "green"; break;
+    case C_BLUE   : color = "blue"; break;
+    case C_INDIGO : color = "indigo"; break;
+    case C_VIOLET : color = "violet"; break;
+    default: "[Unknown!]";
+  }
+  std::cout << "Likes " << color << std::endl;
+
 
   std::cout << "I'm done!" << std::endl;
   
