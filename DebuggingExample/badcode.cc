@@ -13,7 +13,7 @@ void otherfunction() {
 long factorial(int n) {
   long result = 1;
   
-  otherFunction();
+  //otherFunction();
   
   while (n--)
     result *= n;
