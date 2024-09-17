@@ -27,7 +27,7 @@ int main() {
   int n = 0;
   cout << "Compute Factorial for: ";
   cin >> n;
-  n = 6;
+  //n = 6;
 
   long val = factorial(n);
   cout << "Result: " << val << endl;
