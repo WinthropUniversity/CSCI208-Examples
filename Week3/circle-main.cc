@@ -17,6 +17,7 @@ int main() {
   cout << endl;  // Output a blank line
 
   // Report on the big circle
+  //bigCircle.radius_ = 10.0;
   bigCircle.SetRadius(10.2);
   cout << "Big Circle: " << endl;
   bigCircle.PrintInfo();
