@@ -22,8 +22,8 @@ void changeNothing(int x) {
 }
 
 
-void changeIt(int &x) {
-  x = x*x;
+void changeIt(int *ptr) {
+  *ptr = (*ptr) + 3.0;
 }
 
 /**
@@ -45,7 +45,7 @@ int main() {
   cout << "The value of x after running changeNothing(x) = " << x << endl;
 
   // By reference pass
-  changeIt(x);
+  changeIt(&x);
   cout << "The value of x after running changeIt(x) = " << x << endl;
 
   cout << endl;
