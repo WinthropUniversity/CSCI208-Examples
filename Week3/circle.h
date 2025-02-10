@@ -22,6 +22,7 @@ public:
   // Declare these methods here, but actuall *define* them in Circle.cc
   void SetRadius(double inRadius);
   double GetRadius() const;
+
   double GetArea() const;
   double GetCircumference() const;
   void PrintInfo() const;

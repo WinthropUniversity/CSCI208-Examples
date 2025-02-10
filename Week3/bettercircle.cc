@@ -16,7 +16,7 @@ Circle::Circle() {
 
 // Initialization constructor
 Circle::Circle(double inRadius) {
-  this->SetRadius(inRadius);
+  SetRadius(inRadius);
 }
 
 
