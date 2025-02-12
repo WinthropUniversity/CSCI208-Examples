@@ -38,7 +38,7 @@ int main() {
 
   // Now you had better deallocate the list ...
   delete [] numberlist;
-  numberlist = NULL;
+  numberlist = nullptr;
 
   cout << endl;
 
