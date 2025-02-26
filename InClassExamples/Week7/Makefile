@@ -1,4 +1,8 @@
-all: listmain.exe
+all: listmain.exe arraymain.exe
+
+# Link the object file to get an executable
+arraymain.exe: arraymain.o
+	g++ arraymain.o  -o $@
 
 # Link the object files to get an executable
 listmain.exe: listmain.o node.o
@@ -10,6 +14,10 @@ listmain.o:  listmain.cc  node.h
 
 # Compile node into an object file
 node.o: node.cc node.h
+	g++ -c $<
+
+# Compile arraymain example to object file
+arraymain.o: arraymain.cc
 	g++ -c $<
 
 clean:
