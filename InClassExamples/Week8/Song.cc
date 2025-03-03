@@ -13,6 +13,11 @@ Song::Song(string inArtist, string inTitle) {
 }
 
 
+Song::Song(const Song &sourceSong) {
+    this->artist_ = sourceSong.artist_;
+    this->title_  = sourceSong.title_;
+}
+
 
 string Song::GetTitle() const {
     return title_;

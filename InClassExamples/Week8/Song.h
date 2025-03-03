@@ -10,6 +10,7 @@ class Song {
 public:
     Song(); // Default constructor
     Song(string inArtist, string inTitle);  // Initialization constructor
+    Song(const Song &sourceSong); // Copy constructor
 
     string GetTitle() const;  // Accessor method
     string GetArtist() const; // Accessor method

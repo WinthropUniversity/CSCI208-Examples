@@ -18,6 +18,9 @@ int main() {
     Song myothersong("Beyonce", "Care");
     myothersong.Print();
 
+    cout << "Print the third song, copy of the second song:" << endl;
+    Song thirdSong(myothersong);
+    thirdSong.Print();
     // Evertying is okay
     return 0;
 }
