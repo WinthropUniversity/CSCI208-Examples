@@ -14,8 +14,11 @@ Song::Song(string inArtist, string inTitle) {
 
 
 Song::Song(const Song &sourceSong) {
-    this->artist_ = sourceSong.artist_;
-    this->title_  = sourceSong.title_;
+    cout << " ---->  I am copyinging the following song:";
+    sourceSong.Print();
+
+    this->artist_ = sourceSong.artist_ + " (copy)";
+    this->title_  = sourceSong.title_  + " (copy)";
 }
 
 
