@@ -72,6 +72,9 @@ protected:
 };
 
 
+ class Car : public MotorVehicle {
+ };
+
 
 void CompareAndReportMaximumSpeed(const Vehicle &x, const Vehicle &y) {
   if (x.GetMaxSpeed() > y.GetMaxSpeed()) {
@@ -90,6 +93,7 @@ int main() {
     Vehicle myVehicle;
     MotorVehicle myMotorVehicle;
     Plane myPlane;
+    Car myCar;
 
     myVehicle.SetMaxSpeed(10.0);
     myVehicle.Print();
@@ -102,6 +106,10 @@ int main() {
     myPlane.SetNumberOfWings(2);
     myPlane.Print();
 
+    myCar.SetMaxSpeed(100);
+    myCar.SetNumberOfWheels(4);
+    myCar.Print();
+    
     cout << endl;
     CompareAndReportMaximumSpeed(myMotorVehicle, myVehicle);
     CompareAndReportMaximumSpeed(myPlane, myMotorVehicle);
