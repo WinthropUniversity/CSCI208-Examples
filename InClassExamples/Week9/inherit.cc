@@ -19,6 +19,7 @@ public:
         cout << "  Maximum Speed: " << GetMaxSpeed() << endl;
     }
 
+//private:   // RPW:  Try this and see what happens to the last line in the Print() of MotorVehicle
 protected:
     double maxSpeed_;
 };
@@ -37,6 +38,7 @@ public:
     virtual void Print() const {
         Vehicle::Print();
         cout << "  Number of Wheels: " << GetNumberOfWheels() << endl;
+        //cout << "  Internal member variable maxSpeed_ = " << maxSpeed_ << endl;
     }
 
 protected:
