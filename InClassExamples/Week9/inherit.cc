@@ -8,6 +8,13 @@ public:
     virtual void Print() const = 0;
 };
 
+class Robot : public Machine {
+public:
+    virtual void Print() const {
+        cout << "I am a robot.  Danger Will Robinson!!" << endl;
+    }
+};
+
 class Vehicle : public Machine {
 public:
 
@@ -94,6 +101,7 @@ int main() {
     MotorVehicle myMotorVehicle;
     Plane myPlane;
     Car myCar;
+    Robot robby;
 
     myVehicle.SetMaxSpeed(10.0);
     myVehicle.Print();
@@ -109,7 +117,9 @@ int main() {
     myCar.SetMaxSpeed(100);
     myCar.SetNumberOfWheels(4);
     myCar.Print();
-    
+
+    robby.Print();
+
     cout << endl;
     CompareAndReportMaximumSpeed(myMotorVehicle, myVehicle);
     CompareAndReportMaximumSpeed(myPlane, myMotorVehicle);
