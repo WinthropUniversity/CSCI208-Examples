@@ -3,7 +3,12 @@
 
 using namespace std;
 
-class Vehicle {
+class Machine {
+public:
+    virtual void Print() const = 0;
+};
+
+class Vehicle : public Machine {
 public:
 
     double GetMaxSpeed() const {
