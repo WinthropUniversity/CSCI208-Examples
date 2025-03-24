@@ -2,6 +2,9 @@
 
 // Default Constructor
 Base::Base() : fancyName_("NONAME") {}
+//Base::Base() {
+//  fancyName_ = "NONAME";
+//}
 
 // Initialization Constructor
 Base::Base(string inFancyName) : fancyName_(inFancyName) {

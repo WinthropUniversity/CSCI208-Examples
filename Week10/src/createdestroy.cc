@@ -42,9 +42,9 @@ int main() {
   AlternateFunction();
   cout << endl << "Returned from AlternateFunction ..." << endl << endl;
 
-  //Complex x(1.2, -3.0);
-  //Complex y(-0.5, 2.2);
-  //cout << "Here's my complex number: " << x+y << endl;
+  Complex x(1.2, -3.0);
+  Complex y(-0.5, 2.2);
+  cout << "Here's my complex number: " << x+y << endl;// +y << endl;
 
   exit(0);
 }

@@ -14,7 +14,7 @@ Derived::Derived(string inFancyName, int inGreatNumber) :
 // Destructor
 Derived::~Derived() {
   delete [] numberlist_;
-  numberlist_ = NULL;
+  numberlist_ = nullptr;
   cout << "NOTICE:  Destructor called in **Derived** class." << endl;
 }
 
