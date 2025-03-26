@@ -12,6 +12,9 @@ Node::Node(string inText) {
     next_ = nullptr;
 }
 
+//Node::~Node() {
+//    if (next_ != nullptr) delete next_;
+//}
 
 Node::Node(string inText, Node *inNodeptr) {
     textLine_ = inText;

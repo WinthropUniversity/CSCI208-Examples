@@ -11,6 +11,7 @@ public:
     Node();
     Node(string inText);
     Node(string inText, Node *inNodeptr);
+    //~Node();
 
     void InsertAfter(Node *inNewFirstNode);
     void Print() const;

@@ -29,5 +29,7 @@ int main() {
         currPtr = currPtr->GetNext();
     }
     
+    //delete headPtr;
+
     return 0;
 }
