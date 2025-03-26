@@ -30,6 +30,7 @@ int main() {
     }
     
     //delete headPtr;
+    //headPtr = nullptr;
 
     return 0;
 }

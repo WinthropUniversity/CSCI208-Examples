@@ -13,7 +13,10 @@ Node::Node(string inText) {
 }
 
 //Node::~Node() {
-//    if (next_ != nullptr) delete next_;
+//    if (next_ != nullptr) {
+//        delete next_;
+//       next_ = nullptr;
+//    }
 //}
 
 Node::Node(string inText, Node *inNodeptr) {
