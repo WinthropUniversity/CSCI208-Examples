@@ -1,3 +1,6 @@
+#ifndef BOOK_H_
+#define BOOK_H_
+
 #include<iostream>
 #include<string>
 
@@ -19,7 +22,9 @@ public:
     virtual void Print() const;
     virtual void Print(string header) const;
 
-private:
+protected:
     string title_;
     string author_;
 };
+
+#endif
