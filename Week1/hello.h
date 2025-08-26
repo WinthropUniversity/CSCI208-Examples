@@ -3,7 +3,7 @@
 
 #include<iostream>
 
-void printHello();
+void printHello();   // Comment
 
 #endif
 
