@@ -11,29 +11,26 @@ void PrettyPrintList(std::string header, std::string list[], int start, int end)
     for (int idx=start; idx<end; ++idx) {
         std::cout << "[" << (idx+1) << "] " << list[idx] << std::endl;
     }
-
+    
+    // Print a footer
     std::cout << std::endl;
 }
 
 
 int main() {
     std::string fruitNames[10];
-
     int count=0;
-    //int x = count++;
-    //int y = ++count;
-    //std::cout << "x: " << x << "    y:" << y << std::endl;
 
+    // Add some fruit to the list and print them
     fruitNames[count++] = "Apple";
     fruitNames[count++] = "Banana";
     fruitNames[count++] = "Mango";
     fruitNames[count++] = "Kiwi";
-
     PrettyPrintList("Fruits", fruitNames, 0, count);
     
+    // Now add more fruit and print just those
     fruitNames[count++] = "Apples";
     fruitNames[count++] = "Pineapple";
-
     PrettyPrintList("More Fruits", fruitNames, 4, count);
 
     // Everything worked!!
