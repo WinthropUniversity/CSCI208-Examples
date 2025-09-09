@@ -99,7 +99,7 @@ int main() {
   std::cout << "What is 'true'?   " << (int)true << std::endl;
 
   int y = 9;
-  if (2 == y) std::cout << "42 is true!" << std::endl;
+  if (2 == y) std::cout << "The weird condition evaluted to true!!  y=" << y << std::endl;
 
   Student x;
 
