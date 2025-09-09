@@ -1,9 +1,6 @@
 # The target that Make will start at
-all: simple-structsenums file-streams.exe arraypassing.exe paulssillytarget
+all: file-streams.exe arraypassing.exe paulssillytarget
 
-# Link the object file to produce an executable
-simple-structsenums: simple-structsenums.o
-	g++ -o $@ simple-structsenums.o
 
 # Compile the source file to an object file
 simple-structsenums.o: simple-structsenums.cc

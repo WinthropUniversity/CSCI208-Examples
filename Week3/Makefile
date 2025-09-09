@@ -8,7 +8,7 @@ CC=g++
 CFLAGS=-I.
 
 
-all:	circle-main bettercircle-main
+all:	simple-structsenums circle-main bettercircle-main
 
 ## First Example
 simple-class:	simple-class.cc
@@ -35,6 +35,12 @@ square.o:	square.h square.cc
 
 bettercircle-main:	bettercircle-main.cc bettercircle.h bettercircle.o square.o
 	$(CC) $(CFLAGS) -o bettercircle-main  bettercircle-main.cc  bettercircle.o square.o
+
+
+# Link the object file to produce an executable
+simple-structsenums: simple-structsenums.o
+	g++ -o $@ simple-structsenums.o
+
 
 
 # Clean up things
