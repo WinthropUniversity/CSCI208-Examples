@@ -31,7 +31,8 @@ void ShapeNode::SetNext(ShapeNode* inNext) {
 
 void ShapeNode::PrintShape() const {
     cout << "Shape: " << GetName() << " ("
-         << this << " ==>> " << this->GetNext() << ")"  << endl;
+         << this << " ==>> " 
+         << next_ << ")"  << endl;
 }
 
 
