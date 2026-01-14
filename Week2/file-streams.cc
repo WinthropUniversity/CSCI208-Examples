@@ -71,6 +71,7 @@ int main() {
       writeBuffer.clear();  // clear the error
       std::string junk;
       writeBuffer >> junk;  // read the non-number
+      std::cerr << "BAD READ: " << junk << std::endl;
     }
 
     // If it is a number, then write it to the outputfile
