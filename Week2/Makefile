@@ -1,5 +1,5 @@
 # The target that Make will start at
-all: file-streams.exe arraypassing.exe paulssillytarget
+all: file-streams.exe arraypassing.exe paulssillytarget functions.exe
 
 
 # Compile the source file to an object file
@@ -9,6 +9,13 @@ simple-structsenums.o: simple-structsenums.cc
 
 file-streams.exe: file-streams.o
 	g++ -o file-streams.exe  file-streams.o
+
+functions.o: functions.cc
+	g++ -c functions.cc
+
+functions.exe: functions.o
+	g++ functions.o   -o functions.exe
+	
 	
 # Compile the source file for file-styreams to an object file
 file-streams.o: file-streams.cc
