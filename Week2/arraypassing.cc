@@ -10,6 +10,40 @@
 // would be a better programming choice, though.
 #define MAX_ARRAY_SIZE 100
 
+// Prototype these functions
+int readGradefile(double gradesArray[]);
+double mean(double array[], int size);
+void sillyByValueTest(int y);
+void DoNothingAtAll(double greatestValue);
+
+
+// The main program
+int main() {
+  double grades[MAX_ARRAY_SIZE];  // Allocate an array of length MAX_ARRAY_SIZE
+  int numGrades = 0;              // But there's 0 grades entered at first
+  double average = 0.0;
+
+  // Perform the work
+  numGrades = readGradefile(grades);
+  average = mean(grades, numGrades);
+
+  // Report the result
+  std::cout << "Number of values found: " << numGrades << std::endl;
+  std::cout << "Average of the values:  " << std::setprecision(4) << average << std::endl;
+
+  int x = 3;
+  std::cout << "Before pass, x=" << x << std::endl;
+  sillyByValueTest(x);
+  std::cout << "After pass, x=" << x << std::endl;
+
+  //DoNothingAtAll(3.1415926535897);
+
+  // Everything ran okey-dokey, so tell the OS we're good
+  return 0;
+}
+
+
+
 
 /**
  * This function reads doubles from a file called "grades.txt",
@@ -78,11 +112,12 @@ double mean(double array[], int size) {
   double total = 0.0;
 
   // Sum up all the values in the array
-  for (int idx=0; idx<size; idx++) 
+  for (int idx=0; idx<size; idx++) {
     total += array[idx];
+  }
 
   // Return the total / size
-  return ( total / (double)size );
+  return ( total / double(size) );
 }
 
 
@@ -91,24 +126,4 @@ void sillyByValueTest(int y) {
 }
 
 
-// The main program
-int main() {
-  double grades[MAX_ARRAY_SIZE];  // Allocate an array of length MAX_ARRAY_SIZE
-  int numGrades = 0;              // But there's 0 grades entered at first
-  double average = 0.0;
 
-  // Perform the work
-  numGrades = readGradefile(grades);
-  average = mean(grades, numGrades);
-
-  // Report the result
-  std::cout << "Number of values found: " << numGrades << std::endl;
-  std::cout << "Average of the values:  " << std::setprecision(4) << average << std::endl;
-
-  int x = 3;
-  std::cout << "Before pass, x=" << x << std::endl;
-  sillyByValueTest(x);
-  std::cout << "After pass, x=" << x << std::endl;
-  // Everything ran okey-dokey, so tell the OS we're good
-  return 0;
-}
