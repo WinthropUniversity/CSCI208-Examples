@@ -104,7 +104,7 @@ int main() {
   Student x;
 
   x.name = "Paul Wiegand";
-  x.age = 53;
+  x.age = 54;
   x.major = "Computer Science";
   x.favoriteColor = C_GREEN;
 
