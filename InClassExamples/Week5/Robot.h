@@ -5,43 +5,17 @@ using namespace std;
 
 class Robot {
 public:
-	Robot() {
-		name = "UNKNOWN";
-		modelNumber = 0;
-		xPosition = 0.0;
-		yPosition = 0.0;
-		//cout << "Init'd a robot" << endl;
-	}
+	Robot();
 
-	void PrintBot() {
-		cout << name << ":" 
-		     << modelNumber << " ( "
-			 << xPosition << ", "
-			 << yPosition << ")" << endl;
-	}
+	void PrintBot() const;
 
-	void Move(double dx, double dy) {
-		xPosition += dx;
-		yPosition += dy;
-	}
+	void Move(double dx, double dy);
 
-	string GetName() const {
-		return name;
-	}
+	string GetName() const;
 
-	void SetName(string inName) {
-		name = inName;
-	}
-
-	void SetModelNumber(int inModelNumber) {
-		if (inModelNumber < 0) modelNumber = -1;
-		else modelNumber = inModelNumber;
-	}
-
-	void SetPosition(double x, double y) {
-		xPosition = x;
-		yPosition = y;
-	}
+	void SetName(string inName);
+	void SetModelNumber(int inModelNumber);
+	void SetPosition(double x, double y);
 
 private:
 	string name;
