@@ -2,7 +2,7 @@
 // R. Paul Wiegand
 
 // We can use <> here instead of "" because of the "-I" arg in the Makefile
-#include<bettercircle.h>
+#include "bettercircle.h"
 #include<iostream>
 
 // Default Constructor
@@ -28,30 +28,30 @@ void Circle::SetRadius(double inRadius) {
   // Negative radiuses don't make sense, so ...
 
   // If it is positive, set it as given
-  if (inRadius >= 0)  this->radius_ = inRadius;
+  if (inRadius >= 0)  radius_ = inRadius;
 
   // Otherwise, set it as the positive magnitude
-  else this->radius_ = -inRadius;
+  else radius_ = -inRadius;
 }
 
 
 double Circle::GetRadius() const {
-  return this->radius_;
+  return radius_;
 }
 
 
 // Return the area of the circle
 double Circle::GetArea() {
-  return (PI * this->radius_ * this->radius_);
+  return (PI * radius_ * radius_);
 }
 
 // Return the circumference of the circle
 double Circle::GetCircumference() {
-  return (2* PI * this->radius_);
+  return (2* PI * radius_);
 }
 
 void Circle::PrintInfo() {
-  std::cout << "Circle Radius:         " << this->radius_ << std::endl;
-  std::cout << "Circle Area:           " << this->GetArea() << std::endl;
-  std::cout << "Circle Circumference:  " << this->GetCircumference() << std::endl;
+  std::cout << "Circle Radius:         " << radius_ << std::endl;
+  std::cout << "Circle Area:           " << GetArea() << std::endl;
+  std::cout << "Circle Circumference:  " << GetCircumference() << std::endl;
 }

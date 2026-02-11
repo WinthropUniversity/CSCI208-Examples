@@ -16,14 +16,16 @@ int main() {
 
 	for (int idx=0; idx<listSize; idx++) {
 		int modelNumber; 
+		string name;
 
 		cout << "What is the robot's name? ";
-		cin >>  robotList[idx].name;
+		cin >>  name;
+		robotList[idx].SetName(name);
 		cout << "What is the robot's model number? ";
 		cin >> modelNumber;
 
 		robotList[idx].SetModelNumber(modelNumber);
-		robotList[idx].SetPosition(0.0, 0.0);
+		//robotList[idx].SetPosition(0.0, 0.0);
 
 		cout << endl;
 		cin.ignore();
