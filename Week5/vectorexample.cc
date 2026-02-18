@@ -19,8 +19,8 @@ int main() {
 
   // I could just treat this like any old array:
   for (int idx=0; idx<intVector.size(); ++idx)
-    cout << "  intVector[" << idx << "] = " << intVector.at(idx) << endl;
-//    cout << "  intVector[" << idx << "] = " << intVector[idx] << endl;
+//    cout << "  intVector[" << idx << "] = " << intVector.at(idx) << endl;
+    cout << "  intVector[" << idx << "] = " << intVector[idx] << endl;
   
   cout << "The vector's size:        " << intVector.size() << endl;
   cout << "The vector's capacity:    " << intVector.capacity() << endl;
@@ -57,7 +57,7 @@ int main() {
   intVector.erase(intVector.begin()+1);
   
   // There's a newer way to use iterators that's a little cleaner:
-  for (int x: intVector)
+  for (auto x: intVector)
     cout << "  An item in the vector: " << x <<endl;
 
    // Blank Line

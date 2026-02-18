@@ -11,7 +11,8 @@ int main() {
   // Declare an integer
   int mynumber = 4;
   cout << "This is mynumber: " << mynumber << std::endl;
-  cout << "This is the ADDRESS pointing to the memory location where mynumber is stored: " << &mynumber << std::endl;
+  cout << "This is the ADDRESS pointing to the memory location where mynumber is stored: " 
+       << &mynumber << std::endl;
 
   cout << endl;
 
