@@ -4,6 +4,7 @@
 using namespace std;
 
 class Node {
+public:
 	Node();
 	Node(string inName, int inAge, string inHobbies);
 
