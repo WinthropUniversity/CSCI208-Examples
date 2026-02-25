@@ -20,7 +20,7 @@ SimpleStack::SimpleStack()  {
 SimpleStack::SimpleStack(const SimpleStack &sourceStack) {
   this->front_ = nullptr;
 
-  std::cout << "----- In the copy constructor!!! -----" << std::cout << std::endl;
+  std::cout << "----- In the copy constructor!!! -----" << std::endl;
 
   // Get the current node of the *source* stack
   Node *current = sourceStack.front_;
