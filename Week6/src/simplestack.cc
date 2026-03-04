@@ -28,7 +28,6 @@ SimpleStack::SimpleStack(const SimpleStack &sourceStack) {
   // Spin through the source stack, and push data into
   // *this* stack from the source stack nodes.
   while (current != nullptr) {
-    current->GetData();
     this->Push(current->GetData());
     current = current->GetNextNode();
   }
