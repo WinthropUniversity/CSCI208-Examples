@@ -10,6 +10,8 @@ void SelectionSort(vector<string> &wordlist, int &compcount) {
 	// Loop through the leading position between sorted and unsorted sublists
 	for (int idx=0; idx<wordlist.size()-1; idx++) {
 		int bestidx = idx;
+		int progressNum = wordlist.size() / 10;
+		if ((wordlist.size() % progressNum) == 0) cout << ".";
 
 		// Go find the smallest item in the unsorted sublist
 		for (int jdx=idx+1; jdx<wordlist.size(); jdx++) {
@@ -21,7 +23,7 @@ void SelectionSort(vector<string> &wordlist, int &compcount) {
 		wordlist[idx] = wordlist[bestidx];
 		wordlist[bestidx] = tmp;
 	}
-
+	cout << endl;
 }
 
 int main() {
@@ -42,6 +44,6 @@ int main() {
 		cout << word << endl;
 
 	cout << endl << "Size: " << wordlist.size() << ",  comparisons: " << compcount << endl;
-	
+
 	return 0;
 }
