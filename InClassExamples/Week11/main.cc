@@ -1,13 +1,15 @@
 #include<iostream>
 #include<string>
+
 #include "RestaurantItem.h"
+#include "Utensil.h"
 
 using namespace std;
 
 int main() {
-	RestaurantItem myitem("Spoon", 100);
+	Utensil myitem("Spoon", 100, false);
 
 	myitem.PrintItem();
-	
+
 	return 0;
 }

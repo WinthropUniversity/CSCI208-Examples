@@ -19,7 +19,7 @@ public:
 
 	void PrintItem() const;
 
-private:
+protected:
     string name_;
 	int quantity_;
 };
