@@ -20,9 +20,8 @@ void Utensil::SetWashed(bool inWash) {
 }
 
 
-void Utensil::PrintItem() const {
-	RestaurantItem::PrintItem();
-	cout << "   " << (IsWashed() ? "[CLEAN!!]" : "[Needs washing]") << endl; 
+void Utensil::SpecializedPrint() const {
+	cout << "   " << (IsWashed() ? "[CLEAN!!]" : "[Needs washing]");
 
 }
 

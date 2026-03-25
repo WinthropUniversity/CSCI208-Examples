@@ -17,10 +17,9 @@ public:
 	bool IsWashed() const;
 	void SetWashed(bool inWash);
 
-	virtual void PrintItem() const;
-
 protected:
-   bool washed_;
+	virtual void SpecializedPrint() const;
+	bool washed_;
 };
 
 #endif

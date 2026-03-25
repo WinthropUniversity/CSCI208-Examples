@@ -19,7 +19,6 @@ void Food::SetPrice(double inPrice) {
 	else price_ = inPrice;
 }
 
-void Food::PrintItem() const {
-	RestaurantItem::PrintItem();
-	cout << "  Costs: $" << GetPrice() << endl; 
+void Food::SpecializedPrint() const {
+	cout << "  Costs: $" << GetPrice();
 }

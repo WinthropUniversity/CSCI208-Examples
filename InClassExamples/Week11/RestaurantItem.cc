@@ -29,5 +29,7 @@ void RestaurantItem::SetQuantity(int inQuantity) {
 }
 
 void RestaurantItem::PrintItem() const {
-	cout << GetName() << " (" << GetQuantity() << ")" << endl; 
+	cout << GetName() << " (" << GetQuantity() << ") ";
+	SpecializedPrint();
+	cout << endl;
 }

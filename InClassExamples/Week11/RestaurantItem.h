@@ -20,6 +20,8 @@ public:
 	virtual void PrintItem() const;
 
 protected:
+	virtual void SpecializedPrint() const = 0;
+
     string name_;
 	int quantity_;
 };

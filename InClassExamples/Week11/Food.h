@@ -16,9 +16,8 @@ public:
    double GetPrice() const;
    void SetPrice(double inPrice);
 
-   virtual void PrintItem() const;
-
-private:
+protected:
+	virtual void SpecializedPrint() const;
     double price_;
 };
 
