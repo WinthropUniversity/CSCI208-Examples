@@ -16,7 +16,7 @@ public:
    double GetPrice() const;
    void SetPrice(double inPrice);
 
-   void PrintItem() const;
+   virtual void PrintItem() const;
 
 private:
     double price_;

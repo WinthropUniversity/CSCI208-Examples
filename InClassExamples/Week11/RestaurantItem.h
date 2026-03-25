@@ -17,7 +17,7 @@ public:
 	int GetQuantity() const;
 	void SetQuantity(int inQuantity);
 
-	void PrintItem() const;
+	virtual void PrintItem() const;
 
 protected:
     string name_;
