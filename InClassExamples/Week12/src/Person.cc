@@ -35,5 +35,7 @@ void Person::Print() const {
 	cout << endl;
 }
 
-void Person::PrintSpecial() const {}
+void Person::PrintSpecial() const {
+	cout << " (nothing special)";
+}
 
