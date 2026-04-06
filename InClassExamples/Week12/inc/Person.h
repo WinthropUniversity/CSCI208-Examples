@@ -20,7 +20,7 @@ public:
 	virtual void Print() const;
 
 protected:
-	virtual void PrintSpecial() const;
+	//virtual void PrintSpecial() const;
 	
 	string name_;
 	int age_;

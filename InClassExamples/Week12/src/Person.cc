@@ -1,12 +1,12 @@
 #include<Person.h>
 
 Person::Person(string inName, int inAge) : name_(inName), age_(inAge) {
-	cout << "--> Constructing a Person object (" << inName << ") " << endl;
+	//cout << "--> Constructing a Person object (" << inName << ") " << endl;
 }
 
 
 Person::~Person() {
-	cout << "<-- Destroying a Person object (" << GetName() << ") " << endl;
+	//cout << "<-- Destroying a Person object (" << GetName() << ") " << endl;
 } 
 
 
@@ -31,11 +31,11 @@ void Person::SetAge(int inAge) {
 
 void Person::Print() const {
 	cout << GetName() << ", " << GetAge();
-	PrintSpecial();
+	//PrintSpecial();
 	cout << endl;
 }
 
-void Person::PrintSpecial() const {
+/*void Person::PrintSpecial() const {
 	cout << " (nothing special)";
-}
+}*/
 

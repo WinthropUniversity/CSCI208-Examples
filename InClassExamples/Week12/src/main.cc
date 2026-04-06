@@ -8,10 +8,18 @@ using namespace std;
 
 void WhoIsOlder(const Person &a, const Person &b){
 	if (a.GetAge() > b.GetAge()) {
-		cout << a.GetName() << " is older than " << b.GetName() << endl;		
+		cout << "Older:   " << endl;
+		a.Print();
+		cout << "Younger: " << endl;
+		b.Print();
+		//cout << a.GetName() << " is older than " << b.GetName() << endl;		
 	}
 	else if (a.GetAge() < b.GetAge()) {
-		cout << b.GetName() << " is older than " << a.GetName() << endl;		
+		cout << "Older:   " << endl;
+		b.Print();
+		cout << "Younger: " << endl;
+		a.Print();
+		//cout << b.GetName() << " is older than " << a.GetName() << endl;		
 	}
 	else {
 		cout << a.GetName() << " is the same age as " << b.GetName() << endl;
@@ -22,14 +30,15 @@ void WhoIsOlder(const Person &a, const Person &b){
 int main() {
 	ulong ids = 0;
 	Person me("Paul Wiegand", 54);
-	me.Print();
+	//me.Print();
 
 	cout << endl;
 
 	Student student("Kevin Yanni", 20, ++ids);
-	student.Print();
+	//student.Print();
 
-	WhoIsOlder(me, student);
+	//WhoIsOlder(me, student);
+	WhoIsOlder(student, me);
 	
 	return 0;
 }

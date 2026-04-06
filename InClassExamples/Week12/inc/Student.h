@@ -16,10 +16,10 @@ public:
 	~Student();
 
 	ulong GetID() const;
-	//virtual void Print() const;
+	virtual void Print() const;
 
 protected:
-	virtual void PrintSpecial() const;
+	//virtual void PrintSpecial() const;
 
 	ulong id_;
 };
