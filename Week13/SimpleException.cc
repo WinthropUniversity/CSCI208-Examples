@@ -23,8 +23,10 @@ int main() {
   // Perform the computation!
   for (int idx=0; idx<100; idx++) {
     total += 1.0/pow(a,idx);
-    if (total > MAX_SERIES_SUM_VALUE)
+    if (total > MAX_SERIES_SUM_VALUE) {
       throw myexp;        // <--- Exception!!
+      cerr << "Am I still around??" << endl;
+    }
   }
 
   // Yay!  We're done.

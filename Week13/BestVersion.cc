@@ -73,13 +73,14 @@ double ComputeSeries(double a) {
 
 
 int main() {
+  double seriesTotal = 0.0;
+
   // Get the values, compute the series
   try {
     double a= 2.0;
     a = GetDenominator();
     cout << "  a=" << a << endl;
-    double seriesTotal = ComputeSeries(a);
-    cout << "  Series value: " << seriesTotal << endl;
+    seriesTotal = ComputeSeries(a);
   }
   catch (InvalidUserInput &e1) {
     cerr << e1.what() << endl;
@@ -88,10 +89,11 @@ int main() {
     cerr << e2.what() << endl;
   }
   catch (double &e3) {
-    cerr << "The user entered " << e3 << endl;
+    cerr << "The user entered " << e3 << ", which creates a divide by zero error." << endl;
   }
 
   // Yay!  We're done.
+  cout << "Series value: " << seriesTotal << endl;
   cout << "Completed the work!" << endl;
 
   // Don't do this:

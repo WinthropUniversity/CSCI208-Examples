@@ -42,8 +42,9 @@ int main() {
   // Perform the computation!
   try {
     cout << "Series value: " << ComputeSeries(a) << endl;
+    cout << "I finished calculating the series!" << endl;
   }
-  catch (SeriesDivergesException &e) {
+  catch (SeriesDivergesException &e2) {
     cerr << "Unfortunately, that series diverges." << endl;
   }
 
