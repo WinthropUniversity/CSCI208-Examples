@@ -102,7 +102,7 @@ vector<int> ArrangeTwoItems(const vector<int> &unsortedlist, int begin, int end)
 
   // If there's just one item, that's the one
   if (begin == end)
-    tmplist.push_back( unsortedlist[0] );
+    tmplist.push_back( unsortedlist[begin] );
 
   // Otherwise, if the first item is lowest, keep the order
   else if (unsortedlist[begin+0] <= unsortedlist[begin+1]) {
