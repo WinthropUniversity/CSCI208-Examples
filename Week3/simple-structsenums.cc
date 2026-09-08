@@ -73,8 +73,8 @@ Date askUserAboutDay() {
  */
 void printDay(Date myDate) {
   std::cout << myDate.month << "/"
-	          << myDate.day   << "/"
-	          << myDate.year  << "  "
+	    << myDate.day   << "/"
+	    << myDate.year  << "  "
             << (int)myDate.quality << std::endl << std::endl;
 }
 
