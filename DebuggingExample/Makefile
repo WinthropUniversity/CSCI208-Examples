@@ -4,7 +4,7 @@
 CC=g++
 
 CFLAGS=-I$(INCDIR) -g
-
+ 
 LDFLAGS=-ggdb
 
 
