@@ -8,6 +8,7 @@ using namespace std;
 
 
 class Node {
+public:
   Node();
   Node(string inName);
   Node(string inName, Node *inPtr);

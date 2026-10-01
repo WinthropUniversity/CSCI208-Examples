@@ -10,6 +10,7 @@ void otherfunction() {
   cout << "Inside another function!!" << endl;
 }
 
+
 long factorial(int n) {
   long result = 1;
   
