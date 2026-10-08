@@ -31,7 +31,7 @@ int Find(const vector<string> &list, string key) {
 int ArgMin(const vector<string> &list, int start) {
 	int smallestIdx=start;
 
-	for (int idx=0; idx<list.size(); idx++) {
+	for (int idx=start; idx<list.size(); idx++) {
 		string smallest = list[smallestIdx];
 		string current = list[idx];
 		if (current < smallest) smallestIdx = idx;
@@ -54,6 +54,15 @@ void PrintList(const vector<string> &list) {
 	cout << endl;
 }
 
+
+void SortList(vector<string> &list) {
+	for (int leadingPos=0; leadingPos<list.size()-1; leadingPos++) {
+		int smallestIdx = ArgMin(list, leadingPos);
+		Swap(list, smallestIdx, leadingPos);
+	}
+}
+
+
 int main() {
 	vector<string> list;
 	string searchString;
@@ -71,7 +80,7 @@ int main() {
 	cout << endl;
 	cout << "The smallest string is: " << list[ArgMin(list, 0)] << endl;
 
-	Swap(list, 2, 3);
+	SortList(list);
 	PrintList(list);
 	return 0;
 }
