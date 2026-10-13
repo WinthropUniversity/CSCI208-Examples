@@ -34,9 +34,9 @@ int main() {
 	cout << endl << endl;
 	cout << "Head: " << headPtr << " ==> " << headPtr->GetNext() << endl << endl;
 	Node *currPtr = headPtr->GetNext(); // Init
-	while (currPtr != nullptr) {
-		currPtr->PrintInfo(); // Work
-		currPtr = currPtr->GetNext();
+	while (currPtr != nullptr) {        // Condition
+		currPtr->PrintInfo();           // Work
+		currPtr = currPtr->GetNext();   // Interate
 	}
 	return 0;
 }
