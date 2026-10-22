@@ -22,6 +22,8 @@ public:
 protected:
 	string name_;
 	int numPlayers_;
+
+	virtual void PrintSpecifics() const = 0;
 };
 
 

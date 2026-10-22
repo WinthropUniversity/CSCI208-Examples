@@ -9,7 +9,7 @@ LDFLAGS=-ggdb
 
 all: $(PROGRAM)
 
-$(PROGRAM): main.o  Game.o  VideoGame.o
+$(PROGRAM): main.o  Game.o  VideoGame.o BoardGame.o
 	$(LD) $^  -o $@  $(LDFLAGS)
 
 main.o: main.cc  Game.h VideoGame.h
@@ -19,6 +19,9 @@ Game.o: Game.cc Game.h
 	$(CC) $(CFLAGS)  $<
 
 VideoGame.o: VideoGame.cc  Game.h VideoGame.h
+	$(CC) $(CFLAGS) $<
+
+BoardGame.o: BoardGame.cc  Game.h BoardGame.h
 	$(CC) $(CFLAGS) $<
 
 clean:

@@ -29,6 +29,8 @@ void Game::SetNumPlayers(int inNumPlayers) {
 }
 
 void Game::Print() const {
+	cout << endl;
 	cout << GetName() << " for " 
 	     << GetNumPlayers() << " players" << endl;
+	PrintSpecifics();
 }

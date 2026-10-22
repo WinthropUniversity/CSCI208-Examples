@@ -21,7 +21,6 @@ void VideoGame::SetPlatform(string inPlatform) {
 	platform_ = inPlatform;
 }
 
-void VideoGame::Print() const {
-	Game::Print();
+void VideoGame::PrintSpecifics() const {
 	cout << "   Platforms: " << GetPlatform() << endl;
 } 

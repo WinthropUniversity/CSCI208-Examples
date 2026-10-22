@@ -41,7 +41,7 @@ int main() {
   // We asked for the memory; we better give it up when we're done.
   // So, tell the OS to deallocate it:
   delete mynumberptr;
-  mynumberptr = NULL;
+  mynumberptr = nullptr;
   //*mynumberptr = 10;  // IF I DO THIS, SEGFAULT
 
   // Everything ran okey-dokey, so tell the OS we're good

@@ -17,10 +17,11 @@ public:
 	string GetPlatform() const;
 	void SetPlatform(string inPlatform);
 
-	virtual void Print() const;
 
 protected:
 	string platform_;
+
+	virtual void PrintSpecifics() const;
 };
 
 #endif
