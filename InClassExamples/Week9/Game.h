@@ -17,7 +17,7 @@ public:
 	int GetNumPlayers() const;
 	void SetNumPlayers(int inNumPlayers);
 
-	void Print() const;
+	virtual void Print() const;
 
 protected:
 	string name_;
