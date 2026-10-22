@@ -4,7 +4,7 @@ PROGRAM=game.exe
 
 CC=g++
 LD=g++
-CFLAGS=-c
+CFLAGS=-c -I.
 LDFLAGS=-ggdb
 
 all: $(PROGRAM)

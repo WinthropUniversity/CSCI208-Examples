@@ -2,8 +2,8 @@
 #include<string>
 #include<vector>
 
-#include "Game.h"
-#include "VideoGame.h"
+#include <Game.h>
+#include <VideoGame.h>
 
 using namespace std;
 

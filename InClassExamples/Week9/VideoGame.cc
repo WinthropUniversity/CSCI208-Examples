@@ -1,4 +1,4 @@
-#include "VideoGame.h"
+#include <VideoGame.h>
 
 VideoGame::VideoGame() {
 	SetName("Nothing");

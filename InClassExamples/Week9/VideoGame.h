@@ -4,7 +4,7 @@
 #include<string>
 #include<iostream>
 
-#include "Game.h"
+#include <Game.h>
 
 using namespace std;
 
