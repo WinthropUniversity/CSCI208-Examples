@@ -9,6 +9,7 @@ class Node {
 public:
 	Node();
 	Node(double inNumber, Node *inPtr);
+	~Node();
 
 	Node *GetNext() const;
 	void SetNext(Node *inPtr);

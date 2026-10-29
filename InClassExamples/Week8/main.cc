@@ -38,5 +38,9 @@ int main() {
 		currPtr->PrintInfo();           // Work
 		currPtr = currPtr->GetNext();   // Interate
 	}
+
+	delete headPtr;
+	headPtr = nullptr;
+
 	return 0;
 }

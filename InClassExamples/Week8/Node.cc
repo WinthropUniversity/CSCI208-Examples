@@ -11,6 +11,10 @@ Node::Node(double inNumber, Node *inPtr) {
 	next_ = inPtr;
 }
 
+Node::~Node() {
+	if (next_ != nullptr) delete next_;
+}
+
 
 Node *Node::GetNext() const {
 	return next_;
