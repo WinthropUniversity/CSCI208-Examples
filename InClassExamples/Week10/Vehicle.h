@@ -19,7 +19,8 @@ public:
 	void SetDX(double inVal);
 	void SetDY(double inVal);
 
-	void ApplySpeed();
+	virtual void ApplySpeed();
+	virtual void Print() const;
 
 protected:
 	double x_;
