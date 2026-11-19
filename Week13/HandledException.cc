@@ -33,6 +33,7 @@ double ComputeSeries(double a) {
 
 int main() {
   double a= 2.0;
+  int status = 0;
 
   // Get the denominator from the user
   cout << "Series: 1 + 1/a + 1/a^2 + ..." << endl;
@@ -46,9 +47,10 @@ int main() {
   }
   catch (SeriesDivergesException &e2) {
     cerr << "Unfortunately, that series diverges." << endl;
+    status = 1;
   }
 
   // Yay!  We're done.
   cout << "Completed the work!" << endl;
-  return 0;
+  return status;
 }

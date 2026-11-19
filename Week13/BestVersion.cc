@@ -74,6 +74,7 @@ double ComputeSeries(double a) {
 
 int main() {
   double seriesTotal = 0.0;
+  int status=0;
 
   // Get the values, compute the series
   try {
@@ -84,12 +85,15 @@ int main() {
   }
   catch (InvalidUserInput &e1) {
     cerr << e1.what() << endl;
+    status = 1;
   }
   catch (SeriesDivergesException &e2) {
     cerr << e2.what() << endl;
+    status = 2;
   }
   catch (double &e3) {
     cerr << "The user entered " << e3 << ", which creates a divide by zero error." << endl;
+    status = 3;
   }
 
   // Yay!  We're done.
@@ -115,5 +119,5 @@ int main() {
 
   cout << "Everything is okay.  Stopping my program now." << endl;
 
-  return 0;
+  return status;
 }

@@ -60,8 +60,6 @@ void GenericFunction(const SimpleBaseClass &foo) {
 
 
 
-
-
 int main() {
     SimpleBaseClass x("My-Base-Class-Name");
     GenericFunction(x);
